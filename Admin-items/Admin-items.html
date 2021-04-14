@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<header>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ProjectF</title>
+    <link rel="icon" href="../Img/manager.ico">
+    <link rel="stylesheet" href="Admin-items.css">
+    <script type="text/javascript" src="Login-Register.js">
+    </script>
+    <script src="https://kit.fontawesome.com/1fdc2deffc.js" crossorigin="anonymous"></script>
+</header>
+
+<body>
+    <div class="all">
+        <div class="title-box">
+            <h1>Supreme</h1>
+            <a href="#">Log out</a>
+            <a href="../Admin-main/Admin-main.html">Account</a>
+        </div>
+        <div class="add-box">
+            <form class="input-group" action="" method="POST">
+                <table class="table-add">
+                    <tr>
+                        <th><label for="IDadd">ID</label></th>
+                        <td>
+                            <input type="text" class="input-field" id="IDadd" placeholder="ID" value="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><label for="Nameadd">Name</label></th>
+                        <td>
+                            <input type="text" class="input-field" id="Nameadd" placeholder="Name" value="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><label for="Priceadd">Price</label></th>
+                        <td>
+                            <input type="number" class="input-field" id="Priceadd" placeholder="Price" value="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><label for="Avataradd">Avatar</label></th>
+                        <td>
+                            <input type="file" name="img" id="Avataradd">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><label for="Noteadd">Note</label></th>
+                        <td>
+                            <textarea name="" id="" cols="50" rows="10"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        </td>
+                        <td class="btn-save">
+                            <button type="submit" class="sub-btn"><p>Add</p></button>
+                            <button type="submit" class="sub-btn"><p>Đóng</p></button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <div class="update-box">
+            <form class="input-group" action="" method="POST">
+                <table class="table-update">
+                    <tr>
+                        <th><label for="IDupdate">ID</label></th>
+                        <td>
+                            <input type="text" class="input-field" id="IDupdate" placeholder="ID" value="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><label for="Nameupdate">Name</label></th>
+                        <td>
+                            <input type="text" class="input-field" id="Nameupdate" placeholder="Name" value="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><label for="Priceupdate">Price</label></th>
+                        <td>
+                            <input type="number" class="input-field" id="Priceupdate" placeholder="Price" value="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><label>Avatar</label></th>
+                        <td>
+                            <img src="../Img/pass1.png" width="200px">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><label for="Avatarupdate">Avatar</label></th>
+                        <td>
+                            <input type="file" name="img" id="Avatarupdate">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><label for="Noteupdate">Note</label></th>
+                        <td>
+                            <textarea name="textarea" id="" cols="50" rows="10"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        </td>
+                        <td class="btn-save">
+                            <button type="submit" class="sub-btn"><p>Save</p></button>
+                            <button type="submit" class="sub-btn"><p>Đóng</p></button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <div class="big-box">
+            <div class="btn-box">
+                <table>
+                    <tr>
+                        <td><a href="../index.html"><button type="button" class="btn"><i class="fas fa-home"></i>
+                        <p>Trang chủ</p>
+                    </button></a></td>
+                        <td><a href="../Admin-user/Admin-user.html"><button type="button" class="btn"><i class="fas fa-list"></i>
+                        <p>User manager</p>
+                        </button></a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="../Admin-items/Admin-items.html"><button type="button" class="btn"><i class="fas fa-sitemap"></i>
+                        <p>Update items</p>
+                        </button></a></td>
+                        <td><a href="../Admin-bill/Admin-bill.html"><button type="button" class="btn"><i class="fas fa-money-bill-alt"></i>
+                            <p>Bill manager</p>
+                            </button></a></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="data-box">
+                <h1>Update items</h1>
+                <div class="table-box">
+                    <form action="" method="POST">
+                        <table class="table">
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Price</th>
+                                <th>Button</th>
+                            </tr>
+                            <tr>
+                                <td>ip001</td>
+                                <td>iphone 11</td>
+                                <td>11.000.000</td>
+                                <td>
+                                    <button type="button">Chi tiết</button>
+                                    <input type="checkbox" name="delete[]" value="username">
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+                <div class="search-box">
+                    <table>
+                        <tr>
+                            <td>
+                                <input type="text" placeholder="ID">
+                            </td>
+                            <td>
+                                <button type="button">Search</button>
+                            </td>
+                            <td>
+                                <button type="button">Add</button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="delete-box">
+                    <button type="button"><i class="far fa-trash-alt"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

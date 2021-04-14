@@ -1,0 +1,157 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.all {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(-30deg, #00f8f8ef, #b703e4);
+    position: absolute;
+}
+
+.form-box {
+    width: 350px;
+    height: 480px;
+    margin: 10% auto;
+    background-color: white;
+    border-radius: 10px;
+    padding: 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-box {
+    width: 220px;
+    margin: 35px auto;
+    position: relative;
+    box-shadow: 0 0 10px 5px #FF00FF;
+    border-radius: 30px;
+}
+
+#btn {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 110px;
+    height: 100%;
+    background: linear-gradient(15deg, #000000ef, #ffffff, #03e4e4);
+    border-radius: 30px;
+    transition: .5s;
+}
+
+.log-reg {
+    font-weight: bold;
+    color: #0000CD;
+    padding: 10px 28px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+}
+
+#btn-log {
+    color: #FF00FF;
+}
+
+.icon {
+    margin: 350px auto;
+    text-align: center;
+}
+
+.icon a {
+    padding: 15px 15px;
+    margin: 0 10px;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 1px solid #FF00FF;
+    text-decoration: none;
+    color: #FF00FF;
+}
+
+.icon a:hover {
+    color: rgb(0, 247, 255);
+    border-color: rgb(0, 247, 255);
+}
+
+.icon-btn {
+    background: transparent;
+}
+
+.input-group {
+    top: 100px;
+    position: absolute;
+    width: 261px;
+    transition: .5s;
+}
+
+.input-group span {
+    color: #777;
+    font-size: 12px;
+    bottom: 64px;
+    position: absolute;
+}
+
+.input-group a {
+    color: #777;
+    font-size: 12px;
+    bottom: 64px;
+    right: 0;
+    position: absolute;
+    text-decoration: none;
+}
+
+.input-group a:hover {
+    color: #FF00FF;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background: transparent;
+}
+
+.sub-btn {
+    font-weight: bold;
+    color: #0000CD;
+    width: 85%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    background: linear-gradient(8deg, #000000ef, #ffffff, #03e4e4);
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+}
+
+.sub-btn:hover {
+    color: #FF00FF;
+}
+
+.check-box {
+    margin: 30px 10px 30px 0;
+}
+
+#login {
+    left: 50px;
+}
+
+#register {
+    left: 450px;
+}
+
+.input-group label {
+    color: red;
+    font-size: 10px;
+}
