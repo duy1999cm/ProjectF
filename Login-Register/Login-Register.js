@@ -51,6 +51,10 @@ $(document).ready(function() {
             "password": {
                 required: true,
             },
+            "repassword": {
+                required: true,
+                equalTo: "#password",
+            },
         },
         messages: {
             "username": {
@@ -58,10 +62,14 @@ $(document).ready(function() {
             },
             "email": {
                 required: "Nhập vào email",
-                email: "",
+                email: "Vui lòng thêm @",
             },
             "password": {
                 required: "Vui lòng nhập mật khẩu"
+            },
+            "repassword": {
+                required: "Vui lòng nhập mật khẩu",
+                equalTo: "Mật khẩu chưa đúng",
             }
         }
     });

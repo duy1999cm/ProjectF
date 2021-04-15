@@ -153,10 +153,17 @@
 .small-pic {
     bottom: 0;
     left: 0;
-    width: 350px;
-    height: 270px;
+    width: 300px;
+    height: 250px;
     position: absolute;
     border-radius: 0 0 0 10px;
     background-image: url("../Img/pass1.png");
     background-size: 100%;
+}
+
+.error {
+    display: block;
+    margin-top: 10px;
+    color: red !important;
+    font-size: 10px;
 }

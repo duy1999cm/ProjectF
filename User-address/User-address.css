@@ -118,7 +118,7 @@
 
 .form-add {
     top: -105px;
-    width: 260px;
+    width: 350px;
     height: 100px;
     position: absolute;
     border: 2px solid #333;
@@ -188,4 +188,9 @@
 .table-box i {
     color: red;
     font-size: 30px;
+}
+.error{
+    display: block;
+    font-size: x-small;
+    color: red;
 }

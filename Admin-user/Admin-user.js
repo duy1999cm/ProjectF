@@ -4,6 +4,5 @@ function more() {
 }
 
 function cancel() {
-    document.getElementById('big-box').style.display = 'block';
-    document.getElementById('update-box').style.display = 'none';
+    window.location.href = "Admin-user.html";
 }

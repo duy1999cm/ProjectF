@@ -181,3 +181,9 @@
 .btn-save p:hover {
     color: white;
 }
+
+.error {
+    display: block;
+    color: red !important;
+    font-size: 10px;
+}

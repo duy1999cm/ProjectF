@@ -248,24 +248,26 @@
                             </td>
                         </tr>
                     </table>
-                    <form class="form-add">
+
+
+                    <form class="form-add" name="form-add">
                         <table class="table">
                             <tr>
                                 <td rowspan="3">
-                                    <button type="button"><i class="fas fa-plus-circle"></i></button>
+                                    <button type="submit"><i class="fas fa-plus-circle"></i></button>
                                 </td>
                                 <td>
                                     <label for="text">To:</label>
                                 </td>
-                                <td><input type="text" class="input-field" id="text" placeholder="Name"></td>
+                                <td><input type="text" class="input-field " name="name-add" placeholder="Name"></td>
                             </tr>
                             <tr>
                                 <td></td>
-                                <td><input type="text" class="input-field" placeholder="Phone number"></td>
+                                <td><input type="text" class="input-field" name="phone-add" placeholder="Phone number"></td>
                             </tr>
                             <tr>
                                 <td></td>
-                                <td><input type="text" class="input-field" placeholder="Address"></td>
+                                <td><input type="text" class="input-field" name="adress-add" placeholder="Address"></td>
                             </tr>
                         </table>
                     </form>
@@ -273,6 +275,10 @@
             </div>
         </div>
     </div>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="User-address.js"></script>
+
 </body>
 
 </html>

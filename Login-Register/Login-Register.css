@@ -13,8 +13,8 @@
 
 .form-box {
     width: 350px;
-    height: 480px;
-    margin: 10% auto;
+    height: 550px;
+    margin: 5% auto;
     background-color: white;
     border-radius: 10px;
     padding: 5px;
@@ -57,8 +57,9 @@
 }
 
 .icon {
-    margin: 350px auto;
-    text-align: center;
+    left: 75px;
+    bottom: 35px;
+    position: absolute;
 }
 
 .icon a {

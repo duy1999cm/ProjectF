@@ -6,8 +6,6 @@
     <title>ProjectF</title>
     <link rel="icon" href="../Img/manager.ico">
     <link rel="stylesheet" href="Admin-items.css">
-    <script type="text/javascript" src="Login-Register.js">
-    </script>
     <script src="https://kit.fontawesome.com/1fdc2deffc.js" crossorigin="anonymous"></script>
 </header>
 
@@ -18,37 +16,37 @@
             <a href="#">Log out</a>
             <a href="../Admin-main/Admin-main.html">Account</a>
         </div>
-        <div class="add-box">
-            <form class="input-group" action="" method="POST">
+        <div class="add-box" id="add-box">
+            <form id="add1-box" class="input-group" action="" method="POST">
                 <table class="table-add">
                     <tr>
                         <th><label for="IDadd">ID</label></th>
                         <td>
-                            <input type="text" class="input-field" id="IDadd" placeholder="ID" value="">
+                            <input type="text" class="input-field" id="IDadd" placeholder="ID" value="" name="idadd">
                         </td>
                     </tr>
                     <tr>
                         <th><label for="Nameadd">Name</label></th>
                         <td>
-                            <input type="text" class="input-field" id="Nameadd" placeholder="Name" value="">
+                            <input type="text" class="input-field" id="Nameadd" placeholder="Name" value="" name="nameadd">
                         </td>
                     </tr>
                     <tr>
                         <th><label for="Priceadd">Price</label></th>
                         <td>
-                            <input type="number" class="input-field" id="Priceadd" placeholder="Price" value="">
+                            <input type="number" class="input-field" id="Priceadd" placeholder="Price" value="" name="priceadd">
                         </td>
                     </tr>
                     <tr>
                         <th><label for="Avataradd">Avatar</label></th>
                         <td>
-                            <input type="file" name="img" id="Avataradd">
+                            <input type="file" name="avtadd" id="Avataradd">
                         </td>
                     </tr>
                     <tr>
                         <th><label for="Noteadd">Note</label></th>
                         <td>
-                            <textarea name="" id="" cols="50" rows="10"></textarea>
+                            <textarea name="noteadd" id="" cols="50" rows="10"></textarea>
                         </td>
                     </tr>
                     <tr>
@@ -56,13 +54,13 @@
                         </td>
                         <td class="btn-save">
                             <button type="submit" class="sub-btn"><p>Add</p></button>
-                            <button type="submit" class="sub-btn"><p>Đóng</p></button>
+                            <button type="button" class="sub-btn" onclick="cancel()"><p>Đóng</p></button>
                         </td>
                     </tr>
                 </table>
             </form>
         </div>
-        <div class="update-box">
+        <div class="update-box" id="update-box">
             <form class="input-group" action="" method="POST">
                 <table class="table-update">
                     <tr>
@@ -106,13 +104,13 @@
                         </td>
                         <td class="btn-save">
                             <button type="submit" class="sub-btn"><p>Save</p></button>
-                            <button type="submit" class="sub-btn"><p>Đóng</p></button>
+                            <button type="button" class="sub-btn" onclick="cancel()"><p>Đóng</p></button>
                         </td>
                     </tr>
                 </table>
             </form>
         </div>
-        <div class="big-box">
+        <div class="big-box" id="big-box">
             <div class="btn-box">
                 <table>
                     <tr>
@@ -149,7 +147,7 @@
                                 <td>iphone 11</td>
                                 <td>11.000.000</td>
                                 <td>
-                                    <button type="button">Chi tiết</button>
+                                    <button type="button" onclick="more()">Chi tiết</button>
                                     <input type="checkbox" name="delete[]" value="username">
                                 </td>
                             </tr>
@@ -166,7 +164,7 @@
                                 <button type="button">Search</button>
                             </td>
                             <td>
-                                <button type="button">Add</button>
+                                <button type="button" onclick="add()">Add</button>
                             </td>
                         </tr>
                     </table>
@@ -177,6 +175,9 @@
             </div>
         </div>
     </div>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="Admin-items.js"></script>
 </body>
 
 </html>

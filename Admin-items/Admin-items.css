@@ -153,6 +153,7 @@
     margin: 5% auto;
     border-radius: 10px;
     position: relative;
+    /* display: none; */
 }
 
 .btn-box {
@@ -279,4 +280,11 @@
 
 .delete-box button {
     width: 90px;
+}
+
+.error {
+    margin-top: 10px;
+    color: red;
+    font-size: 12px;
+    display: block;
 }
