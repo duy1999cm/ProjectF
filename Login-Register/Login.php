@@ -1,11 +1,10 @@
 <?php
-    require_once '../config/config.php';
+require_once '../config/config.php';
     if(isset($_POST['sub-btn'])){
         $username=$_POST['username'];
         $password=md5($_POST['password']); 
-        $email=$_POST['email'];
     }
-    $sql="INSERT INTO `user`(`username`, `password`, `email`) VALUES ('$username','$password','$email')";
+    $sql="SELECT * FROM `user` WHERE usename='$username' and password='$password'";
     $con->query($sql);
     echo '
     <script>
