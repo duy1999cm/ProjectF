@@ -4,13 +4,12 @@ require_once '../config/config.php';
         $username=$_POST['username'];
         $password=md5($_POST['password']); 
     }
-    $sql="SELECT * FROM `user` WHERE usename='$username' and password='$password'";
-    $con->query($sql);
-    echo '
-    <script>
-        alert("Đăng ký thành công!");
-        window.location.replace("Login-Register.html");
-    </script>
-    ';
+    $sql="SELECT * FROM `user` WHERE username='$username' and password='$password'";
+    $result=$con->query($sql);
+    if ($result->num_rows>0) {
+        $row = $result->fetch_assoc();
+        $_SESSION['user_id']=$row['user_id'];
+    }
     $con->close();
+    header("location: ../index.html");
 ?>
