@@ -22,7 +22,7 @@
                     <div class="col-md-5">
                         <div class="mt-5">
                             <h2>
-                                Liên hệ với chúng tôi
+                                Liên hệ với chúng tôi !
                             </h2>
                         </div>
                         <form action="contact-process.php" data-toggle="validator" class="needs-validation mt-4 mb-4" method="POST">
