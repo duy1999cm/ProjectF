@@ -25,29 +25,29 @@
                                 Liên hệ với chúng tôi
                             </h2>
                         </div>
-                        <form data-toggle="validator" class="needs-validation mt-4 mb-4">
+                        <form action="contact-process.php" data-toggle="validator" class="needs-validation mt-4 mb-4" method="POST">
 
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Tên của bạn</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" data-error="Vui lòng nhập tên của bạn !" required>
+                                <input type="text" class="form-control" name="username" id="exampleInputEmail1" aria-describedby="emailHelp" data-error="Vui lòng nhập tên của bạn !" required>
                                 <div class="help-block with-errors"></div>
 
                             </div>
 
                             <div class="form-group">
                                 <label for="exampleInputPassword1">Email của bạn</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1" data-error="Vui lòng nhập email của bạn !" required>
+                                <input type="email" class="form-control" name="email" id="exampleInputPassword1" data-error="Vui lòng nhập email của bạn !" required>
                                 <div class="help-block with-errors"></div>
                             </div>
 
                             <div class="form-group">
                                 <label for="exampleInputPassword1">Tiêu đề tin nhắn</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1" data-error="Vui lòng nhập tiêu đề cho tin nhắn !" required>
+                                <input type="text" name="title" class="form-control" id="exampleInputPassword1" data-error="Vui lòng nhập tiêu đề cho tin nhắn !" required>
                                 <div class="help-block with-errors"></div>
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputPassword1">Nội dung</label><br>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" required data-error="Viết gì đó cho chúng tôi ! "></textarea>
+                                <textarea class="form-control" name="content" id="exampleFormControlTextarea1" rows="3" required data-error="Viết gì đó cho chúng tôi ! "></textarea>
                                 <div class="help-block with-errors"></div>
                             </div>
                             <button type="submit" class="btn btn-primary btn-lg">Gủi lời nhắn</button>
