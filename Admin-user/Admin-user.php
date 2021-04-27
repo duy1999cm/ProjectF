@@ -1,7 +1,6 @@
 <?php
 require_once '../config/config.php';
-$user_id=$_SESSION['user_id'];
-$sql="SELECT * FROM `user` WHERE user_id='$user_id'";
+$sql="SELECT * FROM `user`";
 $result=$con->query($sql);
 if ($result->num_rows>0) {
     echo'

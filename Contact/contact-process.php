@@ -36,7 +36,24 @@ try {
     //Attachment
         // $mail->addAttachment('img/work-6.jpg');
     //Email body 
-        $mail->Body = '<h1>'.$_POST["title"].'</h1></br>'.$_POST["content"].'</p>';
+        $stringhtml='<table style="width:100%">
+        <tr>
+          <th>Firstname</th>
+          <th>Lastname</th>
+          <th>Age</th>
+        </tr>
+        <tr>
+          <td>Jill</td>
+          <td>Smith</td>
+          <td>50</td>
+        </tr>
+        <tr>
+          <td>Eve</td>
+          <td>Jackson</td>
+          <td>94</td>
+        </tr>
+      </table>';
+        $mail->Body = $stringhtml;
     //Add recipient
         $mail->addAddress(''.$_POST['email'].'');
 
