@@ -1,8 +1,8 @@
 function more() {
-    document.getElementById("big-box").style.display = 'none';
-    document.getElementById('update-box').style.display = 'block';
+    // window.location = "Admin-user-update.php";
+    alert('dasd');
 }
 
-function cancel() {
-    window.location.href = "Admin-user.html";
-}
+// function cancel() {
+//     window.location.href = "Admin-user.html";
+// }

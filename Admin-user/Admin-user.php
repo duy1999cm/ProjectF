@@ -22,73 +22,7 @@ if ($result->num_rows>0) {
             <a href="#">Log out</a>
             <a href="../Admin-main/Admin-main.html">Account</a>
         </div>
-        <div class="update-box" id="update-box">
-            <form class="input-group" action="" method="POST">
-                <table class="table-update">
-                    <tr>
-                        <th><label for="Username">Username</label></th>
-                        <td>
-                            <input type="text" class="input-field" id="Username" placeholder="Username">
-                        </td>
-                    </tr>
-                    <tr>
-                        <th><label for="Password">Password</label></th>
-                        <td>
-                            <input type="text" class="input-field" id="Password" placeholder="Password">
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>
-                            <label for="First name">Name</label></th>
-                        <td class="input-name">
-                            <input type="text" class="input-field" id="First name" placeholder="First name">
-                            <input type="text" class="input-field" placeholder="Last name">
-                        </td>
-                    </tr>
-                    <tr>
-                        <th><label for="Email">Email</label></th>
-                        <td>
-                            <input type="email" class="input-field" id="Email" placeholder="Email">
-                        </td>
-                    </tr>
-                    <tr>
-                        <th><label for="Date">Date</label></th>
-                        <td>
-                            <input type="date" class="input-field" id="Date">
-                        </td>
-                    </tr>
-                    <tr>
-                        <th><label for="Phone number">Number</label></th>
-                        <td>
-                            <input type="number" class="input-field" id="Phone number" placeholder="Phone number">
-                        </td>
-                    </tr>
-                    <tr>
-                        <th><label for="Address">Address</label></th>
-                        <td>
-                            <input type="text" class="input-field" id="Address" placeholder="Address">
-                        </td>
-                    </tr>
-                    <tr>
-                        <th><label>Gender</label></th>
-                        <td class="input-gender">
-                            <input type="radio" name="gender" id="Male" value="Male">
-                            <label for="Male">Male</label>
-                            <input type="radio" name="gender" id="Female" value="Female">
-                            <label for="Female">Female</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                        </td>
-                        <td class="btn-save">
-                            <button type="submit" class="sub-btn"><p>Save</p></button>
-                            <button type="button" class="sub-btn" onclick="cancel()"><p>Đóng</p></button>
-                        </td>
-                    </tr>
-                </table>
-            </form>
-        </div>
+
         <div class="big-box" id="big-box">
             <div class="btn-box">
                 <table>
@@ -129,7 +63,7 @@ if ($result->num_rows>0) {
                                 <td>'.$row['username'].'</td>
                                 <td>'.$row['email'].'</td>
                                 <td>
-                                        <button type="button" onclick="more()" value="'.$row['user_id'].'" name="chitiet">Chi tiết</button>
+                                    <a href="update.php">Chi tiết</a>
                                     <input type="checkbox" name="delete[]" value="username">
                                 </td>
                             </tr>
@@ -159,7 +93,6 @@ if ($result->num_rows>0) {
         </div>
 
     </div>
-    <script type="text/javascript" src="Admin-user.js"></script>
 </body>
 
 </html>
