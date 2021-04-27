@@ -47,7 +47,7 @@ if ($result->num_rows>0) {
             <div class="data-box">
                 <h1>User manager</h1>
                 <div class="table-box">
-                    <form action="" method="POST">
+                    <form action="xoa.php" method="POST">
                         <table class="table">
                             <tr>
                                 <th>ID</th>
@@ -62,8 +62,10 @@ if ($result->num_rows>0) {
                                 <td>'.$row['user_id'].'</td>
                                 <td>'.$row['username'].'</td>
                                 <td>'.$row['email'].'</td>
+
+
                                 <td>
-                                    <a href="update.php?id='.$row['user_id'].'">Chi tiết</a>
+                                    <a href="update.php?id='.$row['user_id'].'">Chi tiết</a>
                                     <input type="checkbox" name="delete[]" value="'.$row['user_id'].'">
                                 </td>
                             </tr>
@@ -71,7 +73,7 @@ if ($result->num_rows>0) {
                             }
                             echo'
                         </table>
-                    </form>
+
                 </div>
                 <div class="search-box">
                     <table>
@@ -86,8 +88,15 @@ if ($result->num_rows>0) {
                     </table>
                 </div>
                 <div class="delete-box">
-                        <a href="xoa.php"><i class="far fa-trash-alt"></i></a>
+                        <a href="xoa.php">
+                        <button type="submit">
+                            <i class="far fa-trash-alt"></i>
+                        </button>
+
+                        </a>
                 </div>
+
+            </form>
             </div>
         </div>
 

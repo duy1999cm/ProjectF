@@ -26,6 +26,7 @@ if ($result->num_rows>0) {
                 <a href="../Admin-main/Admin-main.html">Account</a>
             </div>
             <div class="update-box" id="update-box">
+
                 <form class="input-group" action="xulyupdate.php" method="POST">
                     <table class="table-update">
                         <tr>
@@ -128,6 +129,8 @@ if ($result->num_rows>0) {
                         </tr>
                     </table>
                 </form>
+
+
             </div>
     
         </div>
