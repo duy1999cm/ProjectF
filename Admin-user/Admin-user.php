@@ -63,8 +63,8 @@ if ($result->num_rows>0) {
                                 <td>'.$row['username'].'</td>
                                 <td>'.$row['email'].'</td>
                                 <td>
-                                    <a href="update.php?userid='.$row['user_id'].'">Chi tiết</a>
-                                    <input type="checkbox" name="delete[]" value="username">
+                                    <a href="update.php?id='.$row['user_id'].'">Chi tiết</a>
+                                    <input type="checkbox" name="delete[]" value="'.$row['user_id'].'">
                                 </td>
                             </tr>
                                 ';
@@ -86,8 +86,7 @@ if ($result->num_rows>0) {
                     </table>
                 </div>
                 <div class="delete-box">
-                    <button type="button">
-                        <i class="far fa-trash-alt"></i></button>
+                        <a href="xoa.php"><i class="far fa-trash-alt"></i></a>
                 </div>
             </div>
         </div>
