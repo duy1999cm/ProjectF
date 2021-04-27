@@ -63,7 +63,7 @@ if ($result->num_rows>0) {
                                 <td>'.$row['username'].'</td>
                                 <td>'.$row['email'].'</td>
                                 <td>
-                                    <a href="update.php">Chi tiết</a>
+                                    <a href="update.php?userid='.$row['user_id'].'">Chi tiết</a>
                                     <input type="checkbox" name="delete[]" value="username">
                                 </td>
                             </tr>
