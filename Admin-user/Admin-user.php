@@ -22,7 +22,6 @@ if ($result->num_rows>0) {
             <a href="#">Log out</a>
             <a href="../Admin-main/Admin-main.html">Account</a>
         </div>
-
         <div class="big-box" id="big-box">
             <div class="btn-box">
                 <table>
@@ -88,21 +87,15 @@ if ($result->num_rows>0) {
                     </table>
                 </div>
                 <div class="delete-box">
-                        <a href="xoa.php">
                         <button type="submit">
                             <i class="far fa-trash-alt"></i>
                         </button>
-
-                        </a>
                 </div>
-
             </form>
             </div>
         </div>
-
     </div>
 </body>
-
 </html>
     ';
 }

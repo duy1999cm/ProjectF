@@ -1,15 +1,11 @@
 <?php
 require_once '../config/config.php';
-
 if(isset($_POST['delete'])){
-    $index = $_POST['delete'];
-    foreach($index as $deleteid){
+    $id = $_POST['delete'];
+    foreach($id as $deleteid){
         $sql = "DELETE from user WHERE user_id=".$deleteid;
-        mysqli_query($con,$sql);
-        header('location: Admin-user.php');
-        
+        $con->query($sql);
     }
-
+    header('location: Admin-user.php');
 }
-
 ?>
