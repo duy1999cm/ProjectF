@@ -1,10 +1,12 @@
 <!-- <?php
-require_once '../config/config.php';
-$sql="SELECT * FROM `user`";
-$result=$con->query($sql);
-if ($result->num_rows>0) {
-    echo'';
-}
+require_once '../config/dbhelper.php';
+// $sql="SELECT * FROM `user`";
+// $result=$con->query($sql);
+// if ($result->num_rows>0) {
+//     echo'
+
+//     ';
+// }
 ?> -->
 <!DOCTYPE html>
 <html>
@@ -26,7 +28,7 @@ if ($result->num_rows>0) {
             <a href="../Admin-main/Admin-main.html">Account</a>
         </div>
         <div class="add-box" id="add-box">
-            <form id="add1-box" class="input-group" action="add.php" method="POST">
+            <form id="add1-box" class="input-group" action="add.php" method="POST" enctype="multipart/form-data">
                 <table class="table-add">
                     <tr>
                         <th><label for="Nameadd">Name</label></th>
@@ -48,6 +50,26 @@ if ($result->num_rows>0) {
                         </td>
                     </tr>
                     <tr>
+                        <th><label for="cate">Loại</label
+                        ></th>
+                        <td>
+                            <select name="cateid">
+                            <?php
+                                if(isset($_SESSION['user_id'])){
+                                $sql = 'select * from category';
+                                $abc = executeResult($sql);
+                                foreach($abc as $items){
+                                    echo ' 
+                                    <option value="'.$items['cate_id'].'">'.$items['cate_name'].'</option>
+                                    ';
+                                }
+                            }
+                            ?>
+                            </select>
+                            
+                        </td>
+                    </tr>
+                    <tr>
                         <th><label for="Noteadd">Note</label></th>
                         <td>
                             <textarea name="noteadd" id="" cols="50" rows="10"></textarea>
@@ -57,7 +79,7 @@ if ($result->num_rows>0) {
                         <td>
                         </td>
                         <td class="btn-save">
-                            <button type="submit" class="sub-btn"><p>Add</p></button>
+                            <button type="submit" class="sub-btn" name="sub-btn"><p>Add</p></button>
                             <button type="button" class="sub-btn" onclick="cancel()"><p>Đóng</p></button>
                         </td>
                     </tr>
