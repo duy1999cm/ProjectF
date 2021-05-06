@@ -1,6 +1,5 @@
 <?php
     require_once 'config/dbhelper.php';
-
     $sql = 'SELECT * FROM `category`';
     $cate = executeResult($sql);
 
@@ -127,13 +126,13 @@
                     <div class="row">';
 
 
-                    $sql2 = 'SELECT * FROM product WHERE cate_id ='.$item['cate_id'].'';
+                    $sql2 = 'SELECT * FROM product WHERE cate_id ='.$item['cate_id'].' limit 4';
                     $pro = executeResult($sql2);
                     foreach($pro as $item_pro){
                         echo '
                         <div class="col-md-3 text-center title-pro mt-4">
                         <div class="body-product">
-                            <a href="Pro-detail/pro-detail.html">
+                            <a href="Pro-detail/pro-detail.php?id_pro='.$item_pro['pro_id'].'&id_cate='.$item_pro['cate_id'].'">
                                 <img src="Img/2.jpg" alt="" class="imgproduct">
                                 <hr>
                                 <h6 class="mt-3 pro-title">'.$item_pro['pro_name'].'</h6>

@@ -1,3 +1,8 @@
+<?php
+   $id = $_GET['id'];
+   echo $id;
+   require_once '../config/dbhelper.php';
+?>
 <!DOCTYPE html>
 <html>
 <header>
@@ -62,14 +67,24 @@
                             <th>Giá</th>
                             <th>Action</th>
                         </tr>
-                        <tr>
-                            <td><img src="../Img/bk1.jpg" width="100px"></td>
-                            <td><a href="../Pro-detail/pro-detail.html">Têasflma;sjkfpoasjvpojasvn</a></td>
-                            <td><button>+</button> 3
-                                <button>-</button></td>
-                            <td>0934850934</td>
-                            <td> <button>xoa</button></td>
-                        </tr>
+
+                        <?php
+                            $sql = 'SELECT * FROM `product` WHERE pro_id = '.$id.'';
+                            $reusult = executeResult($sql);
+
+                            foreach($reusult as $item){
+                                echo '
+                                <tr>
+                                <td><img src="../Img/bk1.jpg" width="100px"></td>
+                                <td><a href="../Pro-detail/pro-detail.html">'.$item['pro_name'].'</a></td>
+                                <td><button>+</button> 3
+                                    <button>-</button></td>
+                                <td>0934850934</td>
+                                <td> <button>xoa</button></td>
+                                </tr>
+                                ';
+                            }
+                        ?>
                     </table>
                 </div>
                 <div class="payment">
