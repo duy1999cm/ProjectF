@@ -5,7 +5,7 @@
 
     $sql = 'SELECT * FROM `product` WHERE pro_id = '.$id.'';
     $reusult = executeResult($sql);
-
+    $sl=0;
     foreach($reusult as $item ){
         $name = $item['pro_name'];
         $anh = $item['img_link'];
