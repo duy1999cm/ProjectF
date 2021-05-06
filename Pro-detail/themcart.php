@@ -17,7 +17,4 @@
     execute($sql2);
 
     header ('location: ../index.php');
-
-
-
 ?>
