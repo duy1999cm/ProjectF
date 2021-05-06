@@ -1,5 +1,5 @@
 <?php
-require_once ('config.php');
+require_once ('config2.php');
 
 function execute($sql) {
     $con = mysqli_connect(HOST, USERNAME, PASSWORD, DATABASE);
