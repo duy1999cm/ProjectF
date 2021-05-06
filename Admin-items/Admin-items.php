@@ -168,15 +168,25 @@ require_once '../config/dbhelper.php';
                                 <th>Price</th>
                                 <th>Button</th>
                             </tr>
-                            <tr>
-                                <td>ip001</td>
-                                <td>iphone 11</td>
-                                <td>11.000.000</td>
-                                <td>
-                                    <button type="button" onclick="more()">Chi tiết</button>
-                                    <input type="checkbox" name="delete[]" value="username">
-                                </td>
-                            </tr>
+                            <?php
+                                if(isset($_SESSION['user_id'])){
+                                $sql = 'select * from product';
+                                $abc = executeResult($sql);
+                                foreach($abc as $items){
+                                    echo ' 
+                                    <tr>
+                                    <td>'.$items['pro_id'].'</td>
+                                    <td>'.$items['pro_name'].'</td>
+                                    <td>'.number_format($items['price'],0,',','.').'₫</td>
+                                    <td>
+                                        <button type="button" onclick="more()">Chi tiết</button>
+                                        <input type="checkbox" name="delete['.$items['pro_id'].']" value="username">
+                                    </td>
+                                </tr>
+                                    ';
+                                }
+                            }
+                            ?>
                         </table>
                     </form>
                 </div>
@@ -196,7 +206,7 @@ require_once '../config/dbhelper.php';
                     </table>
                 </div>
                 <div class="delete-box">
-                    <button type="button"><i class="far fa-trash-alt"></i></button>
+                    <button type="button" onclick="xoa()"><i class="far fa-trash-alt"></i></button>
                 </div>
             </div>
         </div>
