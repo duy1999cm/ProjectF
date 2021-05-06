@@ -5,7 +5,6 @@
 
     $sql = 'SELECT * FROM `product` WHERE pro_id = '.$id.'';
     $reusult = executeResult($sql);
-    $sl=0;
     foreach($reusult as $item ){
         $name = $item['pro_name'];
         $anh = $item['img_link'];
@@ -15,8 +14,9 @@
     $user_id =  $_SESSION['user_id'];
 
     $sql2 = "INSERT INTO `cart`(`ten_sp`, `pro_id`, `soluong`,`avatar`, `price`, `status`, `user_id`) VALUES ('$name','$id','1','$anh','$price','0','$user_id')";
-    echo $sql2;
     execute($sql2);
+
+    header ('location: ../index.php');
 
 
 
