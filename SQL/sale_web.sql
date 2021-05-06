@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 22, 2021 at 11:30 AM
+-- Generation Time: May 06, 2021 at 05:21 AM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -59,7 +59,6 @@ CREATE TABLE `product` (
   `pro_name` varchar(255) COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `price` decimal(15,4) NOT NULL,
   `img_link` varchar(255) COLLATE utf8mb4_vietnamese_ci NOT NULL,
-  `img_list` varchar(255) COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `created_at` date NOT NULL,
   `pro_content` text COLLATE utf8mb4_vietnamese_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
@@ -77,17 +76,31 @@ CREATE TABLE `user` (
   `password` varchar(255) COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `role` int(11) NOT NULL,
-  `adddress` varchar(255) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
-  `gender` varchar(255) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL
+  `address` varchar(255) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
+  `gender` varchar(255) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
+  `phone` int(11) DEFAULT NULL,
+  `birthday` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`user_id`, `name`, `username`, `password`, `email`, `role`, `adddress`, `gender`) VALUES
-(2, NULL, 'duy', '202cb962ac59075b964b07152d234b70', 'duy1999cm@gmail.com', 0, NULL, NULL),
-(3, NULL, 'thinh', '202cb962ac59075b964b07152d234b70', 'thinhdb@gmail.com', 0, NULL, NULL);
+INSERT INTO `user` (`user_id`, `name`, `username`, `password`, `email`, `role`, `address`, `gender`, `phone`, `birthday`) VALUES
+(2, 'Le duy', 'duy', '202cb962ac59075b964b07152d234b70', 'duy1999cm@gmail.com', 1, 'nhinh kieu can tho', 'Male', 9214814, '2021-04-13'),
+(3, 'Cho thinhz', 'thinh', '202cb962ac59075b964b07152d234b70', 'thinhdb@gmail.comz', 0, 'lijfows', 'Female', 2342524, '2021-05-18');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `useraddress`
+--
+
+CREATE TABLE `useraddress` (
+  `id` int(11) NOT NULL,
+  `address` varchar(255) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
+  `user_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
 --
 -- Indexes for dumped tables
@@ -120,6 +133,12 @@ ALTER TABLE `user`
   ADD PRIMARY KEY (`user_id`);
 
 --
+-- Indexes for table `useraddress`
+--
+ALTER TABLE `useraddress`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -139,7 +158,13 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `useraddress`
+--
+ALTER TABLE `useraddress`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
