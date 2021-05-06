@@ -1,13 +1,6 @@
-<!-- <?php
+<?php
 require_once '../config/dbhelper.php';
-// $sql="SELECT * FROM `user`";
-// $result=$con->query($sql);
-// if ($result->num_rows>0) {
-//     echo'
-
-//     ';
-// }
-?> -->
+?>
 <!DOCTYPE html>
 <html>
 <header>
@@ -86,56 +79,6 @@ require_once '../config/dbhelper.php';
                 </table>
             </form>
         </div>
-        <div class="update-box" id="update-box">
-            <form class="input-group" action="" method="POST">
-                <table class="table-update">
-                    <tr>
-                        <th><label for="IDupdate">ID</label></th>
-                        <td>
-                            <input type="text" class="input-field" id="IDupdate" placeholder="ID" value="">
-                        </td>
-                    </tr>
-                    <tr>
-                        <th><label for="Nameupdate">Name</label></th>
-                        <td>
-                            <input type="text" class="input-field" id="Nameupdate" placeholder="Name" value="">
-                        </td>
-                    </tr>
-                    <tr>
-                        <th><label for="Priceupdate">Price</label></th>
-                        <td>
-                            <input type="number" class="input-field" id="Priceupdate" placeholder="Price" value="">
-                        </td>
-                    </tr>
-                    <tr>
-                        <th><label>Avatar</label></th>
-                        <td>
-                            <img src="../Img/pass1.png" width="200px">
-                        </td>
-                    </tr>
-                    <tr>
-                        <th><label for="Avatarupdate">Avatar</label></th>
-                        <td>
-                            <input type="file" name="img" id="Avatarupdate">
-                        </td>
-                    </tr>
-                    <tr>
-                        <th><label for="Noteupdate">Note</label></th>
-                        <td>
-                            <textarea name="textarea" id="" cols="50" rows="10"></textarea>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                        </td>
-                        <td class="btn-save">
-                            <button type="submit" class="sub-btn"><p>Save</p></button>
-                            <button type="button" class="sub-btn" onclick="cancel()"><p>Đóng</p></button>
-                        </td>
-                    </tr>
-                </table>
-            </form>
-        </div>
         <div class="big-box" id="big-box">
             <div class="btn-box">
                 <table>
@@ -160,7 +103,7 @@ require_once '../config/dbhelper.php';
             <div class="data-box">
                 <h1>Update items</h1>
                 <div class="table-box">
-                    <form action="" method="POST">
+                    <form action="xoa.php" method="POST">
                         <table class="table">
                             <tr>
                                 <th>ID</th>
@@ -179,8 +122,8 @@ require_once '../config/dbhelper.php';
                                     <td>'.$items['pro_name'].'</td>
                                     <td>'.number_format($items['price'],0,',','.').'₫</td>
                                     <td>
-                                        <button type="button" onclick="more()">Chi tiết</button>
-                                        <input type="checkbox" name="delete['.$items['pro_id'].']" value="username">
+                                        <a href="chitiet.php?id='.$items['pro_id'].'"><button type="button">Chi tiết</button></a>
+                                        <input type="checkbox" name="delete[]" value="'.$items['pro_id'].'">
                                     </td>
                                 </tr>
                                     ';
@@ -188,7 +131,6 @@ require_once '../config/dbhelper.php';
                             }
                             ?>
                         </table>
-                    </form>
                 </div>
                 <div class="search-box">
                     <table>
@@ -205,9 +147,10 @@ require_once '../config/dbhelper.php';
                         </tr>
                     </table>
                 </div>
-                <div class="delete-box">
-                    <button type="button" onclick="xoa()"><i class="far fa-trash-alt"></i></button>
-                </div>
+                    <div class="delete-box">
+                        <button name="sub-btn" type="submit"><i class="far fa-trash-alt"></i></button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

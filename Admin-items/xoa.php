@@ -1,11 +1,11 @@
 <?php
-require_once '../config/config.php';
-if(isset($_POST['delete'])){
+require_once '../config/dbhelper.php';
+if(isset($_POST['sub-btn'])){
     $id = $_POST['delete'];
     foreach($id as $deleteid){
-        $sql = "DELETE from user WHERE user_id=".$deleteid;
-        $con->query($sql);
+        $sql = "DELETE from product WHERE pro_id=".$deleteid;
+        execute($sql);
     }
-    header('location: Admin-user.php');
+    header('location: Admin-items.php');
 }
 ?>

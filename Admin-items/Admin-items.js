@@ -1,10 +1,5 @@
-function more() {
-    document.getElementById("big-box").style.display = 'none';
-    document.getElementById('update-box').style.display = 'block';
-}
-
 function cancel() {
-    window.location.href = "Admin-items.html";
+    window.location.href = "Admin-items.php";
 }
 
 function add() {
