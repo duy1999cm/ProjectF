@@ -11,6 +11,8 @@ require_once '../config/config.php';
         $_SESSION['user_id']=$row['user_id'];
         $_SESSION['role']=$row['role'];
     }
+
+    
     $con->close();
     header("location: ../index.php");
 ?>

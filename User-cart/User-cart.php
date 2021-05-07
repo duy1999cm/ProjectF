@@ -1,7 +1,6 @@
 <?php
-   $id = $_GET['id'];
-   echo $id;
    require_once '../config/dbhelper.php';
+   $id=$_SESSION['user_id'];
 ?>
 <!DOCTYPE html>
 <html>
