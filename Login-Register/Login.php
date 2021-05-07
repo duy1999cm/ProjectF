@@ -10,6 +10,7 @@ require_once '../config/config.php';
         $row = $result->fetch_assoc();
         $_SESSION['user_id']=$row['user_id'];
         $_SESSION['role']=$row['role'];
+        $_SESSION['name']=$row['username'];
     }
     $con->close();
     header("location: ../index.php");
