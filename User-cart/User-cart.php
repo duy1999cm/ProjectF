@@ -1,7 +1,6 @@
 <?php
    require_once '../config/dbhelper.php';
    $id=$_SESSION['user_id'];
-   $sql="";
 ?>
 <!DOCTYPE html>
 <html>
@@ -59,6 +58,7 @@
             <div class="data-box">
                 <h1>Giỏ hàng</h1>
                 <div class="table-box">
+                <form>
                     <table>
                         <tr>
                             <th>Ảnh</th>
@@ -67,28 +67,36 @@
                             <th>Giá</th>
                             <th>Action</th>
                         </tr>
-
                         <?php
-                            $sql = "SELECT ten_sp,soluong,avatar,price,(SELECT count(ten_sp) FROM cart where pro_id=3 ) AS SL FROM cart where user_id='$id'";
+                            $sql = "SELECT * FROM cart where user_id='$id'";
                             $reusult = executeResult($sql);
 
                             foreach($reusult as $item){
                                 echo '
                                 <tr>
                                 <td><img src="../Img/proimg/'.$item['avatar'].'" width="100px" height="100px"></td>
-                                <td><a href="../Pro-detail/pro-detail.html">'.$item['ten_sp'].'</a></td>
-                                <td><button>+</button>'.$item['SL'].'
-                                    <button>-</button></td>
+                                <td><a href="../Pro-detail/pro-detail.php">'.$item['ten_sp'].'</a></td>
+                                <td>
+                                <input type="number" style="width:40px;" onchange="change(this.value,'.$item['pro_id'].')" value="'.$item['soluong'].'"></input>
                                 <td>'.number_format($item['price'],0,'.',',').'</td>
-                                <td> <button>xoa</button></td>
+                                <td> <button >xoa</button></td>
                                 </tr>
                                 ';
                             }
                         ?>
                     </table>
+                    </form>
                 </div>
                 <div class="payment">
-                    <h2>Thành tiền: 325252626</h2>
+                <?php
+                    $sql1="SELECT SUM(price)as sum FROM `cart` WHERE user_id='$id'";
+                    $reusult1 = executeResult($sql1);
+                    foreach($reusult1 as $item){
+                        echo'
+                        <h2>Thành tiền: '.number_format($item['sum'],0,'.','.').'₫</h2>
+                        ';
+                    }
+                ?>
                     <button><h2>Thanh toán</h2></button>
                 </div>
                 <div>
@@ -96,12 +104,14 @@
                         <form action="" method="GET">
                             <label>Địa chỉ:</label>
                             <select name="type" class="select">
-                                <option value="tructiep">le khanh Duy 091846124234 12/2 dao duy tu ninh kieu can tkjhiuguiho viet nam</option>
-                                <option value="atm">Khác</option>
-                                <option value="atm">Khác</option>
-                                <option value="atm">Khác</option>
-                                <option value="atm">Khác</option>
-                                <option value="atm">Khác</option>
+                            <?php
+                    $sql2="SELECT * FROM `user` WHERE user_id='$id'";
+                    $reusult2 = executeSingle($sql2);
+                        echo'
+                        <option value="0">'.$reusult2['address'].'</option>
+                        ';
+                ?>
+                               
                             </select>
                             <br>
                             <label>Phương thức thanh toán:</label>
@@ -180,6 +190,7 @@
             </div>
         </div>
     </div>
+    <script type="text/javascript" src="User-cart.js"></script>
 </body>
 
 </html>

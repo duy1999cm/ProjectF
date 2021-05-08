@@ -80,7 +80,7 @@
                                     ';
                                 }
                             ?>
-                            <li><a style="text-decoration: none; color: white" href="">Liên hệ</a></li>
+                            <li><a style="text-decoration: none; color: white" href="Contact/contact.php">Liên hệ</a></li>
                         </ul>
                     </div>
                 </div>
