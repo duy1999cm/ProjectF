@@ -1,6 +1,7 @@
 <?php
    require_once '../config/dbhelper.php';
    $id=$_SESSION['user_id'];
+   $sql="";
 ?>
 <!DOCTYPE html>
 <html>
@@ -68,17 +69,17 @@
                         </tr>
 
                         <?php
-                            $sql = 'SELECT * FROM `product` WHERE pro_id = '.$id.'';
+                            $sql = "SELECT ten_sp,soluong,avatar,price,(SELECT count(ten_sp) FROM cart where pro_id=3 ) AS SL FROM cart where user_id='$id'";
                             $reusult = executeResult($sql);
 
                             foreach($reusult as $item){
                                 echo '
                                 <tr>
-                                <td><img src="../Img/bk1.jpg" width="100px"></td>
-                                <td><a href="../Pro-detail/pro-detail.html">'.$item['pro_name'].'</a></td>
-                                <td><button>+</button> 3
+                                <td><img src="../Img/proimg/'.$item['avatar'].'" width="100px" height="100px"></td>
+                                <td><a href="../Pro-detail/pro-detail.html">'.$item['ten_sp'].'</a></td>
+                                <td><button>+</button>'.$item['SL'].'
                                     <button>-</button></td>
-                                <td>0934850934</td>
+                                <td>'.number_format($item['price'],0,'.',',').'</td>
                                 <td> <button>xoa</button></td>
                                 </tr>
                                 ';

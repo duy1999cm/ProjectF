@@ -56,7 +56,7 @@
                 <div class="container area-2">
                 <div class="row ">
                     <div class="col-md-4 my-3 text-right">
-                        <img src="../'.$prodetail['img_link'].'" alt="" class="img-fluid">
+                        <img src="../Img/proimg/'.$prodetail['img_link'].'" alt="" class="img-fluid">
                     </div>
     
                     <div class="col-md-5 mt-3 ">
@@ -80,12 +80,8 @@
                         </div>
                         <!-- AddToCart -->
                         <div class="add_cart mt-5">
-                            <a href="">
                                 <button class="btn btn-warning pro_btn">MUA SẢN PHẨM NGAY <br> Giao hàng nhanh</button>
-                            </a>
-                            <a href="themcart.php?id='.$idpro.'" class="ml-2">
-                                <button class="btn btn-danger pro_btn ">THÊM VÀO GIỎ HÀNG <br>Xem sản phẩm sau</button>
-                            </a>
+                                <button class="btn btn-danger pro_btn" onclick="them('.$idpro.')">THÊM VÀO GIỎ HÀNG <br>Xem sản phẩm sau</button>
                         </div>
     
                         <div class="camket my-5">
@@ -153,7 +149,7 @@
                         <div class="col-md-3 text-center title-pro">
                         <div class="body-product">
                             <a href="">
-                                <img src="../'.$items['img_link'].'" alt="" class="imgproduct">
+                                <img src="../Img/proimg/'.$items['img_link'].'" alt="" class="imgproduct">
                                 <hr>
                                 <h6 class="mt-3 pro-title">'.$items['pro_name'].'</h6>
                                 <h5 class="mt-4 text-danger mb-5">'.number_format($items['price'], 0, ',', '.').' ₫</h5>
@@ -193,7 +189,7 @@
             </div>
         </div>
     </div>
-
+    <script type="text/javascript" src="pro-detail.js"></script>
 </body>
 
 </html>
