@@ -16,5 +16,5 @@
     $sql2 = "INSERT INTO `cart`(`ten_sp`, `pro_id`, `soluong`,`avatar`, `price`, `status`, `user_id`) VALUES ('$name','$id','1','$anh','$price','0','$user_id')";
     execute($sql2);
 
-    // header ('location: ../index.php');
+    // lol Duy
 ?>
