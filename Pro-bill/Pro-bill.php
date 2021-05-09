@@ -19,7 +19,7 @@
     <div class="container-fluid">
         <div class="row header">
             <div class="col-md-3">
-                <a href="../index.html" style="width: 300px;">
+                <a href="../index.php" style="width: 300px;">
                     <img src="../Img/logo.png" alt="" class="img-fluid ml-5" width="170px">
                 </a>
             </div>
@@ -33,7 +33,7 @@
             </div>
             <div class="col-md-3">
                 <a href="" class="float-right">Login</a>
-                <a href="" class="float-right">Logout</a>
+                <a href="../Login-Register/Logout.php" class="float-right">Logout</a>
             </div>
         </div>
 

@@ -21,7 +21,7 @@ echo'
         <div class="title-box">
             <h1>Supreme</h1>
             <a href="#">Log out</a>
-            <a href="../Admin-main/Admin-main.html">Account</a>
+            <a href="../Admin-main/Admin-main.php">Account</a>
         </div>
         <div class="update-box" id="update-box">
             <form class="input-group" action="update.php" method="POST" enctype="multipart/form-data">

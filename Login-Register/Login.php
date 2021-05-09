@@ -13,7 +13,6 @@ require_once '../config/config.php';
         $_SESSION['name']=$row['username'];
     }
 
-    
     $con->close();
     header("location: ../index.php");
 ?>

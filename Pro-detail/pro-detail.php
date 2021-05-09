@@ -17,6 +17,8 @@
 
     <!-- boootsrap area-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons"rel="stylesheet">
+
     <!-- <link rel="stylesheet" href="stylye.css"> -->
     <!-- End bootstrap -->
     <link rel="stylesheet" href="pro-detail.css">
@@ -41,8 +43,25 @@
                 </form>
             </div>
             <div class="col-md-3">
-                <a href="" class="float-right">Login</a>
-                <a href="" class="float-right">Logout</a>
+            <?php
+                    if(isset($_SESSION['user_id'])){
+                        echo '
+                        <a href="../User-cart/User-cart.php" class="float-right"><span class="material-icons">
+                            <span class="material-icons">
+                        shopping_cart
+                        </span></a>
+                        </span></a>
+
+                        <a href="../Login-Register/Logout.php" class="float-right">Logout
+                        </a>
+                        <a href="xulyrole.php" class="float-right mt-0">'.$_SESSION['name'].'</a>
+                        ';
+                    }else{
+                        echo '
+                        <a href="../Login-Register/Login-Register.html" class="float-right">Login</a>
+                        ';
+                    }
+                ?>
             </div>
         </div>
 
@@ -80,7 +99,7 @@
                         </div>
                         <!-- AddToCart -->
                         <div class="add_cart mt-5">
-                                <button class="btn btn-warning pro_btn">MUA SẢN PHẨM NGAY <br> Giao hàng nhanh</button>
+                                <button class="btn btn-warning pro_btn" onclick="them('.$idpro.')" >MUA SẢN PHẨM NGAY <br> Giao hàng nhanh</button>
                                 <button class="btn btn-danger pro_btn" onclick="them('.$idpro.')">THÊM VÀO GIỎ HÀNG <br>Xem sản phẩm sau</button>
                         </div>
     

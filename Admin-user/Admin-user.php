@@ -19,14 +19,14 @@ if ($result->num_rows>0) {
     <div class="all">
         <div class="title-box">
             <h1>Supreme</h1>
-            <a href="#">Log out</a>
+            <a href="../Login-Register/Logout.php">Log out</a>
             <a href="../Admin-main/Admin-main.html">Account</a>
         </div>
         <div class="big-box" id="big-box">
             <div class="btn-box">
                 <table>
                     <tr>
-                        <td><a href="../index.html"><button type="button" class="btn"><i class="fas fa-home"></i>
+                        <td><a href="../index.php"><button type="button" class="btn"><i class="fas fa-home"></i>
                         <p>Trang chủ</p>
                     </button></a></td>
                         <td><a href="../Admin-user/Admin-user.html"><button type="button" class="btn"><i class="fas fa-list"></i>
@@ -34,7 +34,7 @@ if ($result->num_rows>0) {
                         </button></a></td>
                     </tr>
                     <tr>
-                        <td><a href="../Admin-items/Admin-items.html"><button type="button" class="btn"><i class="fas fa-sitemap"></i>
+                        <td><a href="../Admin-items/Admin-items.php"><button type="button" class="btn"><i class="fas fa-sitemap"></i>
                         <p>Update items</p>
                         </button></a></td>
                         <td><a href="../Admin-bill/Admin-bill.html"><button type="button" class="btn"><i class="fas fa-money-bill-alt"></i>

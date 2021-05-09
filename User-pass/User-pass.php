@@ -13,25 +13,25 @@
     <div class="all">
         <div class="title-box">
             <h1>Supreme</h1>
-            <a href="#">Log out</a>
+            <a href="../Login-Register/Logout.php">Log out</a>
             <a href="#">Account</a>
         </div>
         <div class="big-box">
             <div class="btn-box">
                 <table>
                     <tr>
-                        <td><a href="../index.html"><button type="button" class="btn"><i class="fas fa-home"></i>
+                        <td><a href="../index.php"><button type="button" class="btn"><i class="fas fa-home"></i>
                         <p>Trang chủ</p>
                     </button></a></td>
-                        <td><a href="../User-cart/User-cart.html"><button type="button" class="btn"><i class="fas fa-shopping-basket"></i>
+                        <td><a href="../User-cart/User-cart.php"><button type="button" class="btn"><i class="fas fa-shopping-basket"></i>
                         <p>Giỏ hàng</p>
                         </button></a></td>
                     </tr>
                     <tr>
-                        <td><a href="../User-profile/User-profile.html"><button type="button" class="btn"><i class="fas fa-address-card"></i>
+                        <td><a href="../User-profile/User-profile.php"><button type="button" class="btn"><i class="fas fa-address-card"></i>
                         <p>Thông tin cá nhân</p>
                         </button></a></td>
-                        <td><a href="../User-bill/User-bill.html"><button type="button" class="btn"><i class="fas fa-clipboard-list"></i>
+                        <td><a href="../User-bill/User-bill.php"><button type="button" class="btn"><i class="fas fa-clipboard-list"></i>
                         <p>Hóa đơn</p>
                         </button></a></td>
                     </tr>
@@ -39,12 +39,12 @@
                         <td><a href="#"><button type="button" class="btn"><i class="fas fa-university"></i>
                         <p>Ví điện tử</p>
                         </button></a></td>
-                        <td><a href="../User-address/User-address.html"><button type="button" class="btn"><i class="fas fa-map-marker-alt"></i>
+                        <td><a href="../User-address/User-address.php"><button type="button" class="btn"><i class="fas fa-map-marker-alt"></i>
                         <p>Địa chỉ</p>
                         </button></a></td>
                     </tr>
                     <tr>
-                        <td><a href="../User-pass/User-pass.html"><button type="button" class="btn"><i class="fas fa-lock"></i>
+                        <td><a href="../User-pass/User-pass.php"><button type="button" class="btn"><i class="fas fa-lock"></i>
                         <p>Đổi mật khẩu</p>
                         </button></a></td>
                         <td></td>

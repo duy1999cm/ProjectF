@@ -17,8 +17,8 @@ require_once '../config/dbhelper.php';
     <div class="all">
         <div class="title-box">
             <h1>Supreme</h1>
-            <a href="#">Log out</a>
-            <a href="../Admin-main/Admin-main.html">Account</a>
+            <a href="../Login-Register/Logout.php">Log out</a>
+            <a href="../Admin-main/Admin-main.html"><?$_SESSION['username']?></a>
         </div>
         <div class="add-box" id="add-box">
             <form id="add1-box" class="input-group" action="add.php" method="POST" enctype="multipart/form-data">

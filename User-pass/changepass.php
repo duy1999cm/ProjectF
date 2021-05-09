@@ -7,5 +7,5 @@ if(isset($_POST['sub-btn'])){
 $sql="UPDATE `user` SET `password`='$newpass' WHERE user_id=$id";
 $result=$con->query($sql);
 $con->close();
-header("location: User-pass.html");
+header("location: User-pass.php");
 ?>
