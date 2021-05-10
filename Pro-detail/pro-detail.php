@@ -99,7 +99,7 @@
                         </div>
                         <!-- AddToCart -->
                         <div class="add_cart mt-5">
-                                <button class="btn btn-warning pro_btn" onclick="them('.$idpro.')" >MUA SẢN PHẨM NGAY <br> Giao hàng nhanh</button>
+                                <button class="btn btn-warning pro_btn">MUA SẢN PHẨM NGAY <br> Giao hàng nhanh</button>
                                 <button class="btn btn-danger pro_btn" onclick="them('.$idpro.')">THÊM VÀO GIỎ HÀNG <br>Xem sản phẩm sau</button>
                         </div>
     

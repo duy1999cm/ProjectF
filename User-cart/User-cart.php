@@ -75,7 +75,7 @@
                                 echo '
                                 <tr>
                                 <td><img src="../Img/proimg/'.$item['avatar'].'" width="100px" height="100px"></td>
-                                <td><a href="../Pro-detail/pro-detail.php">'.$item['ten_sp'].'</a></td>
+                                <td><a href="../Pro-detail/pro-detail.php?id_pro='.$item['pro_id'].'&id_cate='.$item['cate_id'].'">'.$item['ten_sp'].'</a></td>
                                 <td>
                                 <input type="number" style="width:40px;" onchange="change(this.value,'.$item['pro_id'].')" value="'.$item['soluong'].'"></input>
                                 <td>'.number_format($item['price'],0,'.',',').'</td>

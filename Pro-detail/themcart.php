@@ -27,9 +27,10 @@
             $name = $row['pro_name'];
             $anh = $row['img_link'];
             $price = $row['price'] ;
+            $cate=$row['cate_id'];
             }
         // }
-        $sql2 = "INSERT INTO `cart`(`ten_sp`, `pro_id`, `soluong`,`avatar`, `price`, `status`, `user_id`) VALUES ('$name','$id','1','$anh','$price','0','$user_id')";
+        $sql2 = "INSERT INTO `cart`(`ten_sp`, `pro_id`,`cate_id`, `soluong`,`avatar`, `price`, `status`, `user_id`) VALUES ('$name','$id','$cate','1','$anh','$price','0','$user_id')";
         $reusult2=$con->query($sql2);
         echo"Đã thêm vào giỏ";
     }

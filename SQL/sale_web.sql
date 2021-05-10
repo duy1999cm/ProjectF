@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 09, 2021 at 04:57 PM
+-- Generation Time: May 10, 2021 at 11:13 AM
 -- Server version: 10.4.18-MariaDB
--- PHP Version: 7.3.28
+-- PHP Version: 8.0.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -31,20 +31,13 @@ CREATE TABLE `cart` (
   `id` int(11) NOT NULL,
   `ten_sp` varchar(255) COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `pro_id` int(11) NOT NULL,
+  `cate_id` int(11) NOT NULL,
   `soluong` int(11) NOT NULL,
   `avatar` varchar(255) COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `price` decimal(15,0) NOT NULL,
   `status` int(11) NOT NULL,
   `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
-
---
--- Dumping data for table `cart`
---
-
-INSERT INTO `cart` (`id`, `ten_sp`, `pro_id`, `soluong`, `avatar`, `price`, `status`, `user_id`) VALUES
-(19, 'Asus nè', 6, 1, '2.jpg', '35000', 0, 3),
-(20, 'Apple nè', 2, 1, '2.jpg', '50000', 0, 3);
 
 -- --------------------------------------------------------
 
@@ -88,14 +81,13 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`pro_id`, `cate_id`, `pro_name`, `price`, `img_link`, `created_at`, `pro_content`) VALUES
-(2, 2, 'Apple nè', '50000', '2.jpg', '2021-05-11', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five'),
-(3, 2, 'Apple nè', '20000', '2.jpg', '2021-05-11', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five'),
+(2, 1, 'Apple nè', '5000000001', 'dien-thoai-man-hinh-full-hd-1.jpg', '2021-05-10', 'stripslashes(Lorem Ipsum is simply dummy text of)'),
+(3, 1, 'Apple nè', '200000', '2.jpg', '2021-05-10', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five'),
 (4, 3, 'Apple nè', '10000', '2.jpg', '2021-05-11', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five'),
 (5, 3, 'Apple nè', '100', '2.jpg', '2021-05-11', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five'),
 (6, 1, 'Asus nè', '35000', '2.jpg', '2021-05-11', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five'),
 (7, 4, 'Xiaomi nè', '100', '2.jpg', '2021-05-11', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five'),
-(8, 2, 'Apple nè', '12000', '2.jpg', '2021-05-11', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five'),
-(9, 2, 'Apple nè', '12000', 'mivietnam-slide-s6maxv-04.jpg', '2021-05-11', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five');
+(8, 2, 'Apple nè', '12000', '2.jpg', '2021-05-11', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five');
 
 -- --------------------------------------------------------
 
@@ -122,7 +114,7 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`user_id`, `name`, `username`, `password`, `email`, `role`, `address`, `gender`, `phone`, `birthday`) VALUES
 (2, 'Le duy', 'duy', '202cb962ac59075b964b07152d234b70', 'duy1999cm@gmail.com', 1, 'nhinh kieu can tho', 'Male', 9214814, '2021-04-13'),
-(3, 'Cho thinhz', 'thinh', '81dc9bdb52d04dc20036dbd8313ed055', 'thinhdb@gmail.comz', 0, 'lijfows', 'Female', 2342524, '2021-05-18');
+(3, 'Cho thinhz', 'thinh', '202cb962ac59075b964b07152d234b70', 'thinhdb@gmail.comz', 0, 'lijfows', 'Female', 2342524, '2021-05-18');
 
 -- --------------------------------------------------------
 
@@ -181,7 +173,7 @@ ALTER TABLE `useraddress`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `category`
