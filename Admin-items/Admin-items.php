@@ -38,7 +38,7 @@ require_once '../config/dbhelper.php';
                     <tr>
                         <th><label for="Avataradd">Avatar</label></th>
                         <td>
-                            <input type="file" name="avtadd" id="Avataradd">
+                            <input type="file" name="avtadd" id="Avataradd" accept=".jpg, .jpeg, .png">
                             
                         </td>
                     </tr>

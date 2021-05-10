@@ -70,7 +70,7 @@
                         </tr>
                         <tr class="btn-save">
                             <td></td>
-                            <td><button type="submit" name="sub-btn"><p>Save</p></button></td>
+                            <td><button type="button" name="sub-btn" onclick="changepass()"><p>Save</p></button></td>
                         </tr>
                     </table>
                 </form>

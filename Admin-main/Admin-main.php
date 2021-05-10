@@ -1,4 +1,7 @@
-
+<?php
+    require_once '../config/dbhelper.php';
+    $username=$_SESSION['name'];
+?>
 <!DOCTYPE html>
 <html>
 <header>
@@ -17,7 +20,10 @@
         <div class="title-box">
             <h1>Supreme</h1>
             <a href="../Login-Register/Logout.php">Log out</a>
-            <a href="../Admin-main/Admin-main.php"></a>
+            <?php
+                    echo' <a href="../Admin-main/Admin-main.php">'.$username.'</a>
+                ';
+            ?>
         </div>
         <div class="big-box">
             <div class="btn-box">

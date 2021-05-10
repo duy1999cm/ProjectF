@@ -79,7 +79,7 @@
                                 <td>
                                 <input type="number" style="width:40px;" onchange="change(this.value,'.$item['pro_id'].')" value="'.$item['soluong'].'"></input>
                                 <td>'.number_format($item['price'],0,'.',',').'</td>
-                                <td> <button >Xóa</button></td>
+                                <td> <a href="xoa.php?id='.$item['pro_id'].'">Xóa</a></td>
                                 </tr>
                                 ';
                             }
