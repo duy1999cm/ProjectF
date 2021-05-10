@@ -1,3 +1,10 @@
+<?php
+require_once '../config/dbhelper.php';
+require_once '../config/check_ss.php';
+
+    $username=$_SESSION['name'];
+
+?>
 <!DOCTYPE html>
 <html>
 <header>
@@ -14,7 +21,11 @@
         <div class="title-box">
             <h1>Supreme</h1>
             <a href="../index.php">Log out</a>
-            <a href="../Admin-main/Admin-main.html">Account</a>
+            <a href="../Admin-main/Admin-main.php">
+            <?php
+                echo $username;
+            ?>
+            </a>
         </div>
         <div class="big-box" id="big-box">
             <div class="btn-box">
@@ -23,12 +34,12 @@
                         <td><a href="../index.php"><button type="button" class="btn"><i class="fas fa-home"></i>
                         <p>Trang chủ</p>
                     </button></a></td>
-                        <td><a href="../Admin-user/Admin-user.html"><button type="button" class="btn"><i class="fas fa-list"></i>
+                        <td><a href="../Admin-user/Admin-user.php"><button type="button" class="btn"><i class="fas fa-list"></i>
                         <p>User manager</p>
                         </button></a></td>
                     </tr>
                     <tr>
-                        <td><a href="../Admin-items/Admin-items.html"><button type="button" class="btn"><i class="fas fa-sitemap"></i>
+                        <td><a href="../Admin-items/Admin-items."><button type="button" class="btn"><i class="fas fa-sitemap"></i>
                         <p>Update items</p>
                         </button></a></td>
                         <td><a href="../Admin-bill/Admin-bill.php"><button type="button" class="btn"><i class="fas fa-money-bill-alt"></i>

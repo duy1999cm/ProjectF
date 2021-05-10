@@ -1,5 +1,7 @@
 <?php
     require_once '../config/dbhelper.php';
+    require_once '../config/check_ss.php';
+
     $id = $_GET['idcate'];
     $sql = 'SELECT * FROM `category` WHERE cate_id = '.$id.' ';
     $cate = executeResult($sql);

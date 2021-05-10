@@ -1,3 +1,9 @@
+<?php
+    require_once '../config/dbhelper.php';
+    require_once '../config/check_ss.php';
+
+    $username=$_SESSION['name'];
+?>
 <!DOCTYPE html>
 <html>
 <header>
@@ -14,7 +20,7 @@
         <div class="title-box">
             <h1>Supreme</h1>
             <a href="../Login-Register/Logout.php">Log out</a>
-            <a href="#"></a>
+            <a href="#"><?php echo $username;?></a>
         </div>
         <div class="big-box">
             <div class="btn-box">
@@ -44,7 +50,7 @@
                         </button></a></td>
                     </tr>
                     <tr>
-                        <td><a href="../User-pass/User-pass.html"><button type="button" class="btn"><i class="fas fa-lock"></i>
+                        <td><a href="../User-pass/User-pass.php"><button type="button" class="btn"><i class="fas fa-lock"></i>
                         <p>Đổi mật khẩu</p>
                         </button></a></td>
                         <td></td>

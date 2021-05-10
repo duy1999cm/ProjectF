@@ -1,3 +1,6 @@
+<?php
+    require_once '../config/check_ss.php';
+?>
 <!DOCTYPE html>
 <html>
 <header>

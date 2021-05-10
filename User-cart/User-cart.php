@@ -1,6 +1,9 @@
 <?php
    require_once '../config/dbhelper.php';
+   require_once '../config/check_ss.php';
+
    $id=$_SESSION['user_id'];
+   $us = $_SESSION['name']
 ?>
 <!DOCTYPE html>
 <html>
@@ -18,7 +21,7 @@
         <div class="title-box">
             <h1>Supreme</h1>
             <a href="../Login-Register/Logout.php">Log out</a>
-            <a href="#">Account</a>
+            <a href="#"><?php echo $us;?></a>
         </div>
         <div class="big-box">
             <div class="btn-box">

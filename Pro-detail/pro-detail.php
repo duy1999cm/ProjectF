@@ -1,5 +1,7 @@
 <?php
     require_once '../config/dbhelper.php';
+    require_once '../config/check_ss.php';
+
     $idpro = $_GET['id_pro'];
     $idcate = $_GET['id_cate'];
     $sql = 'SELECT * FROM `product` WHERE pro_id = '.$idpro.' ';

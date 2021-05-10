@@ -1,4 +1,6 @@
 <?php
+    require_once '../config/check_ss.php';
+
 /*
 THIS FILE USES PHPMAILER INSTEAD OF THE PHP MAIL() FUNCTION
 AND ALSO SMTP TO SEND THE EMAILS

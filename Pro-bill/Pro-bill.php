@@ -1,3 +1,7 @@
+<?
+    require_once '../config/check_ss.php';
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 

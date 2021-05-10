@@ -1,5 +1,8 @@
 <?php
 require_once '../config/config.php';
+require_once '../config/check_ss.php';
+
+$username=$_SESSION['name'];
 $sql="SELECT * FROM `user`";
 $result=$con->query($sql);
 if ($result->num_rows>0) {
@@ -20,7 +23,7 @@ if ($result->num_rows>0) {
         <div class="title-box">
             <h1>Supreme</h1>
             <a href="../Login-Register/Logout.php">Log out</a>
-            <a href="../Admin-main/Admin-main.html">Account</a>
+            <a href="../Admin-main/Admin-main.php">'.$username.'</a>
         </div>
         <div class="big-box" id="big-box">
             <div class="btn-box">
@@ -29,7 +32,7 @@ if ($result->num_rows>0) {
                         <td><a href="../index.php"><button type="button" class="btn"><i class="fas fa-home"></i>
                         <p>Trang chủ</p>
                     </button></a></td>
-                        <td><a href="../Admin-user/Admin-user.html"><button type="button" class="btn"><i class="fas fa-list"></i>
+                        <td><a href="../Admin-user/Admin-user.php"><button type="button" class="btn"><i class="fas fa-list"></i>
                         <p>User manager</p>
                         </button></a></td>
                     </tr>
@@ -37,7 +40,7 @@ if ($result->num_rows>0) {
                         <td><a href="../Admin-items/Admin-items.php"><button type="button" class="btn"><i class="fas fa-sitemap"></i>
                         <p>Update items</p>
                         </button></a></td>
-                        <td><a href="../Admin-bill/Admin-bill.html"><button type="button" class="btn"><i class="fas fa-money-bill-alt"></i>
+                        <td><a href="../Admin-bill/Admin-bill.php"><button type="button" class="btn"><i class="fas fa-money-bill-alt"></i>
                             <p>Bill manager</p>
                             </button></a></td>
                     </tr>

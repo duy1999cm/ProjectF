@@ -1,6 +1,9 @@
 <?php
 require_once '../config/config.php';
+require_once '../config/check_ss.php';
+
 $id=$_SESSION['user_id'];
+$us=$_SESSION['name'];
 $sql="SELECT * FROM `user` where user_id='$id'";
 $result=$con->query($sql);
 $con->close();
@@ -23,7 +26,7 @@ if ($result->num_rows>0) {
             <div class="title-box">
                 <h1>Supreme</h1>
                 <a href="../Login-Register/Logout.php">Log out</a>
-                <a href="#">Account</a>
+                <a href="#">'.$us.'</a>
             </div>
             <div class="big-box">
                 <div class="btn-box">
