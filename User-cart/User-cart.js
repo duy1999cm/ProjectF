@@ -15,3 +15,6 @@ function change(sl, id) {
     xmlhttp.open("GET", "update.php?id=" + id + "&num=" + num, true);
     xmlhttp.send();
 }
+function con(){
+    alert("Thanh toán thành công!");
+}

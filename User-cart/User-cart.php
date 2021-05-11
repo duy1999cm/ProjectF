@@ -100,7 +100,7 @@
                         ';
                     }
                 ?>
-                    <button><h2>Thanh toán</h2></button>
+                    <button type="button" onclick="con()"><h2>Thanh toán</h2></button>
                 </div>
                 <div>
                     <div class="opt">
