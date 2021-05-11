@@ -116,7 +116,6 @@ $username=$_SESSION['name'];
                             <tr>
                                 <th>ID</th>
                                 <th>Name</th>
-                                <th>Category</th>
                                 <th>Price</th>
                                 <th>Button</th>
                             </tr>
@@ -129,7 +128,6 @@ $username=$_SESSION['name'];
                                     <tr>
                                     <td>'.$items['pro_id'].'</td>
                                     <td>'.$items['pro_name'].'</td>
-                                    <td>'.$items['cate_id'].'</td>
                                     <td>'.number_format($items['price'],0,',','.').'₫</td>
                                     <td>
                                         <a href="chitiet.php?id='.$items['pro_id'].'"><button type="button">Chi tiết</button></a>
