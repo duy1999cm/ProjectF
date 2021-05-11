@@ -212,7 +212,8 @@
     border-collapse: collapse;
 }
 
-.table a {
+.table button {
+    width: 60px;
     text-decoration: none;
     border: 2px solid rgb(16, 117, 0);
     border-radius: 5px;
@@ -221,7 +222,7 @@
     background-color: white;
 }
 
-.table a:hover {
+.table button:hover {
     color: white;
     background-color: #FF00FF;
 }
@@ -261,18 +262,5 @@
 }
 
 .delete-box button {
-    width: 90px;
-}
-
-.update-box {
-    bottom: 0;
-    right: 100px;
-    width: 100px;
-    height: 90px;
-    position: absolute;
-    text-align: center;
-}
-
-.update-box button {
     width: 90px;
 }

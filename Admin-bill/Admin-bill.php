@@ -46,6 +46,11 @@ require_once '../config/check_ss.php';
                             <p>Bill manager</p>
                             </button></a></td>
                     </tr>
+                    <tr>
+                    <td><a href="../Admin-items/Admin-items.php"><button type="button" class="btn"><i class="fas fa-sitemap"></i>
+                    <p>Category</p>
+                    </button></a></td>
+                </tr>
                 </table>
             </div>
             <div class="data-box">

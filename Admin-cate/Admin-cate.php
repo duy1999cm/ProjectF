@@ -1,11 +1,10 @@
 <?php
-require_once '../config/config.php';
+require_once '../config/dbhelper.php';
 require_once '../config/check_ss.php';
 
 $username=$_SESSION['name'];
 $sql="SELECT * FROM `category`";
-$result=$con->query($sql);
-if ($result->num_rows>0) {
+$result=executeResult($sql);
     echo'
         <!DOCTYPE html>
 <html>
@@ -54,7 +53,7 @@ if ($result->num_rows>0) {
             <div class="data-box">
                 <h1>Category</h1>
                 <div class="table-box">
-                    <form action="update.php" method="POST">
+                    <form action="build.php" method="POST">
                         <table class="table">
                             <tr>
                                 <th>ID</th>
@@ -62,13 +61,13 @@ if ($result->num_rows>0) {
                                 <th>Button</th>
                             </tr>
                             ';
-                            while($row = $result->fetch_assoc()){
+                            foreach($result as $row){
                                 echo'
                                 <tr>
-                                <td><input type="text" name="id[]" value="'.$row['cate_id'].'" readonly></td>
-                                <td><input type="text" name="name[]" value="'.$row['cate_name'].'"></td>
+                                <td>'.$row['cate_id'].'</td>
+                                <td>'.$row['cate_name'].'</td>
                                 <td>
-                                    <input type="checkbox" name="delete[]" value="'.$row['cate_id'].'">
+                                    <button type="button" onclick="del('.$row['cate_id'].')"><i class="far fa-trash-alt"></i></button>
                                 </td>
                             </tr>
                                 ';
@@ -81,23 +80,20 @@ if ($result->num_rows>0) {
                     <table>
                         <tr>
                             <td>
-                                <input type="text" placeholder="Username">
+                                <input type="text" placeholder="Id" name="cateid">
                             </td>
                             <td>
                                 <button type="button">Search</button>
                             </td>
+                            <td>
+                                <button type="submit" name="up-btn">Update</button>
+                            </td>
+                        </tr>
+                        <tr>
+                        <td><input type="text" placeholder="Catename" name="catename"></td>
+                        <td><button type="submit" name="add-btn">Add</button></td>
                         </tr>
                     </table>
-                </div>
-                <div class="update-box">
-                <button type="submit" name="up-btn">
-                    <i class="fas fa-pen-nib"></i>
-                </button>
-                </div>
-                <div class="delete-box">
-                        <button type="submit" name="delete-btn">
-                            <i class="far fa-trash-alt"></i>
-                        </button>
                 </div>
             </form>
             </div>
@@ -107,9 +103,5 @@ if ($result->num_rows>0) {
 </body>
 </html>
     ';
-}
-?>
-
-<?php
-$con->close();
+                        
 ?>
