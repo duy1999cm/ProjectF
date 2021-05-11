@@ -3,7 +3,7 @@
     require_once '../config/check_ss.php';
 
     $id = $_GET['idcate'];
-    $sql = 'SELECT * FROM `category` WHERE cate_id = '.$id.' ';
+    $sql = "SELECT product.*, category.*  FROM product JOIN category ON product.cate_id = category.cate_id WHERE product.cate_id = '$id'";
     $cate = executeResult($sql);
 ?>
 
@@ -74,13 +74,7 @@
                 <div class="col-md-3 font-menu2">
                     <div class="font-menu">
                         <ul class="font-list">
-                             <?php
-                                foreach($cate as $items){
-                                    echo '
-                                    <li>'.$items['cate_name'].'</li>
-                                    ';
-                                }
-                            ?>
+                            <li>Samsung</li>
                             <li><a style="text-decoration: none; color: white" href="Contact/contact.php">Liên hệ</a>
                             </li>
                         </ul>
@@ -129,31 +123,28 @@
         <!-- endmenu -->
 
         <div class="container-fluid content">
-
-        <?php
-                foreach($cate as $item){
-                    echo'
-                    <div class="container mt-3">
+        <div class="container mt-3">
                     <div class="row">
                         <div class="col-md-4 mt-3">
                             <div class="conatainer">
                                 <div class="title mb-3 text-center">
-                                    <span>'.$item['cate_name'].'</span>
+                                        <span>Samsung</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                     </div>
+        <?php
+                foreach($cate as $item){
+                    echo'
                     <div class="container">
                     <div class="row">';
-
-
                     $sql2 = 'SELECT * FROM product WHERE cate_id ='.$item['cate_id'].' limit 4';
                     $pro = executeResult($sql2);
                     foreach($pro as $item_pro){
                         echo '
                         <div class="col-md-3 text-center title-pro mt-4">
-                        <div class="body-product">
+                        <div class="body-product pt-3">
                             <a href="../Pro-detail/pro-detail.php?id_pro='.$item_pro['pro_id'].'&id_cate='.$item_pro['cate_id'].'">
                                 <img src="../Img/proimg/'.$item_pro['img_link'].'" alt="" class="imgproduct">
                                 <hr>
