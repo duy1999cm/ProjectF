@@ -148,7 +148,7 @@
                     foreach($pro as $item_pro){
                         echo '
                         <div class="col-md-3 text-center title-pro mt-4">
-                        <div class="body-product pt-3">
+                        <div class="body-product py-3">
                             <a href="Pro-detail/pro-detail.php?id_pro='.$item_pro['pro_id'].'&id_cate='.$item_pro['cate_id'].'">
                                 <img src="Img/proimg/'.$item_pro['img_link'].'" alt="" class="imgproduct img-fluid">
                                 <hr>
