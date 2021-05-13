@@ -55,7 +55,7 @@
 
                         <a href="../Login-Register/Logout.php" class="float-right">Logout
                         </a>
-                        <a href="xulyrole.php" class="float-right mt-0">'.$_SESSION['name'].'</a>
+                        <a href="../Admin-main/Admin-main.php" class="float-right mt-0">'.$_SESSION['name'].'</a>
                         ';
                     }else{
                         echo '

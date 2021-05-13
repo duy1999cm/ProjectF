@@ -1,6 +1,5 @@
 <?php
     require_once '../config/dbhelper.php';
-    require_once '../config/check_ss.php';
 
     // $id = $_GET['idcate'];
     $name = $_GET['search'];
@@ -47,13 +46,13 @@
             <?php
                     if(isset($_SESSION['user_id'])){
                         echo '
-                        <a href="../Login-Register/Logout.php" class="float-right"><span class="material-icons">
+                        <a href="../User-cart/User-cart.php" class="float-right"><span class="material-icons">
                         shopping_cart
                         </span></a>
 
                         <a href="../Login-Register/Logout.php" class="float-right">Logout
                         </a>
-                        <a href="xulyrole.php" class="float-right mt-0">'.$_SESSION['name'].'</a>
+                        <a href="../Admin-main/Admin-main.php" class="float-right mt-0">'.$_SESSION['name'].'</a>
                         ';
                     }else{
                         echo '
@@ -126,20 +125,20 @@
             <div id="footer" class="nav-bottom mt-4 p-0">
                 <div class="container">
                     <div class="row ">
-                        <div class="col-12 col-sm-4 col-md-4 text-center">
+                        <div class="col-12 col-sm-4 col-md-4 text-center pt-4">
                             <a href="tel:0326175888">
                                 <label>KHU VỰC MIỀNBẮC</label>
                                 <p>0326.175.888</p>
                             </a>
                         </div>
-                        <div class="col-12 col-sm-4 col-md-4 text-center">
+                        <div class="col-12 col-sm-4 col-md-4 text-center pt-4">
                             <a href="mail:sale@mivietnam.vn">
                                 <label>EMAIL ĐẶT HÀNG</label>
                                 <p>sale@mivietnam.vn</p>
                             </a>
                         </div>
-                        <div class="col-12 col-sm-4 col-md-4 text-center">
-                            <label><a href="Contact/contact.php">Liên hệ với chúng tôi</a></label>
+                        <div class="col-12 col-sm-4 col-md-4 text-center pt-4">
+                            <label><a href="../Contact/contact.php">Liên hệ với chúng tôi</a></label>
                         </div>
                     </div>
                 </div>
