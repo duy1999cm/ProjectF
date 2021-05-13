@@ -88,27 +88,38 @@
                
                     echo'
                     <div class="container">
-                    <div class="row">';
+                    <div class="row text-center">';
                     $sql2 = 'SELECT * FROM `product` WHERE pro_name LIKE "%'.$name.'%"';
                     $pro = executeResult($sql2);
-                    foreach($pro as $item_pro){
-                        echo '
-                        <div class="col-md-3 text-center title-pro mt-4">
-                        <div class="body-product pt-3">
-                            <a href="../Pro-detail/pro-detail.php?id_pro='.$item_pro['pro_id'].'&id_cate='.$item_pro['cate_id'].'">
-                                <img src="../Img/proimg/'.$item_pro['img_link'].'" alt="" class="imgproduct">
-                                <hr>
-                                <h6 class="mt-3 pro-title">'.$item_pro['pro_name'].'</h6>
-                                <h5 class="mt-4 text-danger mb-5">'.number_format($item_pro['price'], 0, ',', '.').' ₫</h5>
-                            </a>
-                        </div>
-                        </div>
-                        ';
-                    }
-
+                    $num =  count($pro);
+                            if($num < 1){
+                                echo '
+                                <div class="my-5">
+                                <h3 class="text-danger ">
+                                    Không tìm thấy kết quả cho tìm kiếm: '.$name.' 
+                                </h3>
+                                </div>
+                                ';
+                            }else{
+                                foreach($pro as $item_pro){
+   
+                                    echo '
+                                    <div class="col-md-3 text-center title-pro mt-4">
+                                    <div class="body-product pt-3">
+                                        <a href="../Pro-detail/pro-detail.php?id_pro='.$item_pro['pro_id'].'&id_cate='.$item_pro['cate_id'].'">
+                                            <img src="../Img/proimg/'.$item_pro['img_link'].'" alt="" class="imgproduct">
+                                            <hr>
+                                            <h6 class="mt-3 pro-title">'.$item_pro['pro_name'].'</h6>
+                                            <h5 class="mt-4 text-danger mb-5">'.number_format($item_pro['price'], 0, ',', '.').' ₫</h5>
+                                        </a>
+                                    </div>
+                                    </div>
+                                    ';
+                                }
+                            }
                     echo '
                     </div>
-                </div>
+                    </div>
                     ';     
             ?>
 
