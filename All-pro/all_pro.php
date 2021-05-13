@@ -1,10 +1,14 @@
 <?php
     require_once '../config/dbhelper.php';
-    require_once '../config/check_ss.php';
 
     $id = $_GET['idcate'];
-    $sql = "SELECT product.*, category.*  FROM product JOIN category ON product.cate_id = category.cate_id WHERE product.cate_id = '$id'";
-    $cate = executeResult($sql);
+    $sql = 'SELECT * FROM `product` WHERE cate_id ='.$id.'';
+    $pro = executeResult($sql);
+    $sql2 = 'SELECT `cate_name` FROM `category` WHERE cate_id='.$id.'';
+    $cate = executeSingle($sql2);
+    $cate_name = $cate['cate_name'];
+    
+    
 ?>
 
 <!DOCTYPE html>
@@ -73,7 +77,7 @@
                 <div class="col-md-3 font-menu2">
                     <div class="font-menu">
                         <ul class="font-list">
-                            <li>Samsung</li>
+                            <li><?php echo $cate_name; ?></li>
                             <li><a style="text-decoration: none; color: white" href="Contact/contact.php">Liên hệ</a>
                             </li>
                         </ul>
@@ -122,68 +126,64 @@
         <!-- endmenu -->
 
         <div class="container-fluid content">
-        <div class="container mt-3">
-                    <div class="row">
-                        <div class="col-md-4 mt-3">
-                            <div class="conatainer">
-                                <div class="title mb-3 text-center">
-                                        <span>Samsung</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-        <?php
-                foreach($cate as $item){
-                    echo'
-                    <div class="container">
-                    <div class="row">';
-                    $sql2 = 'SELECT * FROM product WHERE cate_id ='.$item['cate_id'].' limit 4';
-                    $pro = executeResult($sql2);
-                    foreach($pro as $item_pro){
-                        echo '
-                        <div class="col-md-3 text-center title-pro mt-4">
-                        <div class="body-product pt-3">
-                            <a href="../Pro-detail/pro-detail.php?id_pro='.$item_pro['pro_id'].'&id_cate='.$item_pro['cate_id'].'">
-                                <img src="../Img/proimg/'.$item_pro['img_link'].'" alt="" class="imgproduct">
-                                <hr>
-                                <h6 class="mt-3 pro-title">'.$item_pro['pro_name'].'</h6>
-                                <h5 class="mt-4 text-danger mb-5">'.number_format($item_pro['price'], 0, ',', '.').' ₫</h5>
-                            </a>
-                        </div>
-                        </div>
-                        ';
-                    }
 
-                    echo '
+        <div class="container mt-3">
+            <div class="row">
+                <div class="col-md-4 mt-3">
+                    <div class="conatainer">
+                        <div class="title mb-3 text-center">
+                            <span><?php echo $cate_name; ?></span>
+                        </div>
                     </div>
                 </div>
+            </div>
+        </div>
+
+        <?php
+             echo'
+             <div class="container">
+             <div class="row text-center">';
+
+                foreach($pro as $item_pro){
+
+                    echo '
+                        <div class="col-md-3 text-center title-pro mt-4">
+                        <div class="body-product pt-3">
+                        <a href="../Pro-detail/pro-detail.php?id_pro='.$item_pro['pro_id'].'&id_cate='.$item_pro['cate_id'].'">
+                             <img src="../Img/proimg/'.$item_pro['img_link'].'" alt="" class="imgproduct">
+                                <hr>
+                                <h6 class="mt-3 pro-title">'.$item_pro['pro_name'].'</h6>
+                            <h5 class="mt-4 text-danger mb-5">'.number_format($item_pro['price'], 0, ',', '.').' ₫</h5>
+                        </a>
+                        </div>
+                         </div>
                     ';
-                    // $sql2 = 'SELECT product.*, category.* FROM product INNER JOIN category ON product.cate_id ='.$item['cate_id'].'';
-                    // $pro = executeResult($sql2);
-
                 }
-                
-            ?>
 
-            <div id="footer" class="nav-bottom mt-4 p-0">
-                <div class="container">
-                    <div class="row ">
-                        <div class="col-12 col-sm-4 col-md-4 text-center">
-                            <a href="tel:0326175888">
-                                <label>KHU VỰC MIỀNBẮC</label>
-                                <p>0326.175.888</p>
-                            </a>
-                        </div>
-                        <div class="col-12 col-sm-4 col-md-4 text-center">
-                            <a href="mail:sale@mivietnam.vn">
-                                <label>EMAIL ĐẶT HÀNG</label>
-                                <p>sale@mivietnam.vn</p>
-                            </a>
-                        </div>
-                        <div class="col-12 col-sm-4 col-md-4 text-center">
-                            <label><a href="Contact/contact.php">Liên hệ với chúng tôi</a></label>
-                        </div>
+             echo '
+             </div>
+             </div>
+             ';     
+        ?>
+
+        <div id="footer" class="nav-bottom mt-4 p-0">
+             <div class="container">
+                <div class="row ">
+                    <div class="col-12 col-sm-4 col-md-4 text-center pt-4">
+                        <a href="tel:0326175888">
+                             <label>KHU VỰC MIỀNBẮC</label>
+                             <p>0326.175.888</p>
+                        </a>
+                    </div>
+                    <div class="col-12 col-sm-4 col-md-4 text-center pt-4">
+                        <a href="mail:sale@mivietnam.vn">
+                            <label>EMAIL ĐẶT HÀNG</label>
+                            <p>sale@mivietnam.vn</p>
+                        </a>
+                    </div>
+                     <div class="col-12 col-sm-4 col-md-4 text-center pt-4">
+                            <label><a href="Contact/contact.php">LIÊN HỆ VỚI CHÚNG TÔI</a></label>
+                    </div>
                     </div>
                 </div>
             </div>
