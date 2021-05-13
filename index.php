@@ -33,9 +33,9 @@
                 </a>
             </div>
             <div class="col-md-6">
-                <form action="">
+                <form action="./search/search.php" method="GET">
                     <div class="input-group mt-4">
-                        <input type="search" class="form-control" aria-label="Sizing example input" placeholder="Search here">
+                        <input type="search" class="form-control" name="search" aria-label="Sizing example input" placeholder="Tìm kiếm tên sản phẩm">
                         <button type="submit " class="btn btn-success">Search</button>
                     </div>
                 </form>

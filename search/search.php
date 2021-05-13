@@ -2,9 +2,10 @@
     require_once '../config/dbhelper.php';
     require_once '../config/check_ss.php';
 
-    $id = $_GET['idcate'];
-    $sql = "SELECT product.*, category.*  FROM product JOIN category ON product.cate_id = category.cate_id WHERE product.cate_id = '$id'";
-    $cate = executeResult($sql);
+    // $id = $_GET['idcate'];
+    $name = $_GET['search'];
+    // $sql = "SELECT product.*, category.*  FROM product JOIN category ON product.cate_id = category.cate_id WHERE product.cate_id = '$id'";
+    // $cate = executeResult($sql);
 ?>
 
 <!DOCTYPE html>
@@ -35,7 +36,7 @@
                 </a>
             </div>
             <div class="col-md-6">
-            <form action="../search/search.php" method="GET">
+            <form action="search.php" method="GET">
                     <div class="input-group mt-4">
                         <input type="search" class="form-control" name="search" aria-label="Sizing example input" placeholder="Tìm kiếm tên sản phẩm">
                         <button type="submit " class="btn btn-success">Search</button>
@@ -68,57 +69,7 @@
 
     <div class="container-fluid">
         <!-- Menu -->
-        <div class="container-fluid">
-            <div class="row mt-3">
-                <div class="col-md-3 font-menu2">
-                    <div class="font-menu">
-                        <ul class="font-list">
-                            <li>Samsung</li>
-                            <li><a style="text-decoration: none; color: white" href="Contact/contact.php">Liên hệ</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- Carosel -->
-                <div class="col-md-9">
-                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel"
-                        data-interval="2000">
-                        <ol class="carousel-indicators">
-                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-                        </ol>
-
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src="../Img/banner1.jpg" class="d-block w-100" alt="...">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="../Img/mivietnam-slide-s6maxv-04.jpg" class="d-block w-100" alt="...">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="../Img/Banner-3C.jpg" class="d-block w-100" alt="...">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="../Img/banner2.jpg" class="d-block w-100" alt="...">
-                            </div>
-                        </div>
-                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
-                            data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
-                            data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </div>
-                </div>
-                <!-- End-Carosel -->
-            </div>
-        </div>
+       
         <!-- endmenu -->
 
         <div class="container-fluid content">
@@ -127,18 +78,18 @@
                         <div class="col-md-4 mt-3">
                             <div class="conatainer">
                                 <div class="title mb-3 text-center">
-                                        <span>Samsung</span>
+                                        <span>Sản phẩm tìm thấy</span>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    </div>
+        </div>
         <?php
-                foreach($cate as $item){
+               
                     echo'
                     <div class="container">
                     <div class="row">';
-                    $sql2 = 'SELECT * FROM product WHERE cate_id ='.$item['cate_id'].' limit 4';
+                    $sql2 = 'SELECT * FROM `product` WHERE pro_name LIKE "%'.$name.'%"';
                     $pro = executeResult($sql2);
                     foreach($pro as $item_pro){
                         echo '
@@ -158,12 +109,7 @@
                     echo '
                     </div>
                 </div>
-                    ';
-                    // $sql2 = 'SELECT product.*, category.* FROM product INNER JOIN category ON product.cate_id ='.$item['cate_id'].'';
-                    // $pro = executeResult($sql2);
-
-                }
-                
+                    ';     
             ?>
 
             <div id="footer" class="nav-bottom mt-4 p-0">
@@ -188,10 +134,6 @@
                 </div>
             </div>
         </div>
-
-
-
-
         <!-- Javascript -->
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
             integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
