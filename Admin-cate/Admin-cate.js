@@ -16,3 +16,39 @@ function del(id) {
         xmlhttp.send();
     }
 }
+
+function add() {
+    $("#search-form").validate({
+        rules: {
+            "catename1": {
+                required: true,
+            }
+        },
+        messages: {
+            "catename1": {
+                required: "Vui lòng nhập tên!"
+            }
+        }
+    })
+}
+
+function update() {
+    $("#up-form").validate({
+        rules: {
+            "cateid": {
+                required: true,
+            },
+            "catename2": {
+                required: true,
+            }
+        },
+        messages: {
+            "cateid": {
+                required: "Vui lòng nhập id!",
+            },
+            "catename2": {
+                required: "Vui lòng nhập tên!"
+            }
+        }
+    })
+}

@@ -53,7 +53,6 @@ $result=executeResult($sql);
             <div class="data-box">
                 <h1>Category</h1>
                 <div class="table-box">
-                    <form action="build.php" method="POST">
                         <table class="table">
                             <tr>
                                 <th>ID</th>
@@ -76,30 +75,44 @@ $result=executeResult($sql);
                         </table>
 
                 </div>
+                <form id="search-form" action="build.php" method="POST">
                 <div class="search-box">
                     <table>
                         <tr>
                             <td>
-                                <input type="text" placeholder="Id" name="cateid">
+                                <input type="text" placeholder="Catename" name="catename1"></td>
                             </td>
                             <td>
                                 <button type="button">Search</button>
                             </td>
                             <td>
-                                <button type="submit" name="up-btn">Update</button>
+                                <button type="submit" name="add-btn" onclick="add()">Add</button>
                             </td>
-                        </tr>
-                        <tr>
-                        <td><input type="text" placeholder="Catename" name="catename"></td>
-                        <td><button type="submit" name="add-btn">Add</button></td>
                         </tr>
                     </table>
                 </div>
+                </form>
+                <form id="up-form" action="build.php" method="POST">
+                <div class="up-box">
+                    <table>
+                        <tr>
+                            <td>
+                                <input type="text" placeholder="id" name="cateid"></td>
+                            </td>
+                            <td>
+                            <button type="submit" name="up-btn" onclick="update()">Update</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> <input type="text" placeholder="Catename" name="catename2"></td></td>
+                        </tr>
             </form>
             </div>
         </div>
     </div>
-    <script type="text/javascript" src="Admin-cate.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js" type="text/javascript"></script>
+    <script src="Admin-cate.js" type="text/javascript"></script>
 </body>
 </html>
     ';

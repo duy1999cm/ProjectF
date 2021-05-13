@@ -252,6 +252,18 @@
     width: 90px;
 }
 
+.up-box {
+    bottom: 0;
+    right: 70px;
+    width: 200px;
+    height: 90px;
+    position: absolute;
+}
+
+.up-box button {
+    width: 90px;
+}
+
 .delete-box {
     bottom: 0;
     right: 0;
@@ -263,4 +275,8 @@
 
 .delete-box button {
     width: 90px;
+}
+
+.error {
+    color: red;
 }

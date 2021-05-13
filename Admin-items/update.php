@@ -10,9 +10,17 @@ if(isset($_POST['sub-btn'])){
     $today = date("Y-m-d");  
     $note=$_POST['note'];
 }
-$sql="UPDATE `product` SET `cate_id`='$cateid',`pro_name`='$name',`price`='$price',`img_link`='$avatar',`created_at`='$today',`pro_content`='$note' WHERE pro_id='$id'";
-execute($sql);
-echo $sql;
-move_uploaded_file($_FILES['img']['tmp_name'],$link);
+if($avatar==""){
+    $sql="UPDATE `product` SET `cate_id`='$cateid',`pro_name`='$name',`price`='$price',`created_at`='$today',`pro_content`='$note' WHERE pro_id='$id'";
+    execute($sql);
+    
+}else{
+    $sql="UPDATE `product` SET `cate_id`='$cateid',`pro_name`='$name',`price`='$price',`img_link`='$avatar',`created_at`='$today',`pro_content`='$note' WHERE pro_id='$id'";
+    execute($sql);
+    move_uploaded_file($_FILES['img']['tmp_name'],$link);
+}
+// $sql="UPDATE `product` SET `cate_id`='$cateid',`pro_name`='$name',`price`='$price',`img_link`='$avatar',`created_at`='$today',`pro_content`='$note' WHERE pro_id='$id'";
+// execute($sql);
+// move_uploaded_file($_FILES['img']['tmp_name'],$link);
 header("location: Admin-items.php")
 ?>

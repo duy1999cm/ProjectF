@@ -71,7 +71,7 @@ echo'
                     <tr>
                         <th><label for="Avatarupdate">Avatar</label></th>
                         <td>
-                            <input type="file" name="img" id="Avatarupdate" accept=".jpg, .jpeg, .png" required>
+                            <input type="file" name="img" id="Avatarupdate" accept=".jpg, .jpeg, .png">
                         </td>
                     </tr>
                     <tr>
