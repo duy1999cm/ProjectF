@@ -1,4 +1,5 @@
 <?php
+    require_once '../config/dbhelper.php';
     require_once '../config/check_ss.php';
 ?>
 <!DOCTYPE html>

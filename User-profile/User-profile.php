@@ -108,7 +108,15 @@ if ($result->num_rows>0) {
                             <tr>
                                 <th><label>Gender</label></th>
                                 ';
-                                if($row['gender'] == 'Male'){
+                                if($row['gender'] == ''){
+                                    echo'
+                                    <td class="input-gender">
+                                    <input type="radio" name="gender" id="Male" value="Male">
+                                    <label for="Male">Male</label>
+                                    <input type="radio" name="gender" id="Female" value="Female">
+                                    <label for="Female">Female</label>
+                                    ';
+                                }else if($row['gender'] == 'Male'){
                                     echo'
                                     <td class="input-gender">
                                     <input checked  type="radio" name="gender" id="Male" value="Male">
@@ -116,7 +124,7 @@ if ($result->num_rows>0) {
                                     <input type="radio" name="gender" id="Female" value="Female">
                                     <label for="Female">Female</label>
                                     ';
-                                    }if($row['gender'] == 'Female'){
+                                }else if($row['gender'] == 'Female'){
                                     echo'
                                     <td class="input-gender">
                                     <input type="radio" name="gender" id="Male" value="Male">
