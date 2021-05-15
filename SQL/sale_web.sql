@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th5 15, 2021 lúc 03:42 PM
+-- Thời gian đã tạo: Th5 15, 2021 lúc 04:05 PM
 -- Phiên bản máy phục vụ: 10.4.18-MariaDB
 -- Phiên bản PHP: 8.0.3
 
@@ -31,11 +31,19 @@ CREATE TABLE `bill` (
   `id` int(11) NOT NULL,
   `username` varchar(255) COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `address` varchar(255) COLLATE utf8mb4_vietnamese_ci NOT NULL,
+  `phone` int(11) NOT NULL,
   `date` varchar(255) COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `payment` varchar(255) COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `status` int(11) NOT NULL DEFAULT 0,
   `sum` decimal(15,0) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `bill`
+--
+
+INSERT INTO `bill` (`id`, `username`, `address`, `phone`, `date`, `payment`, `status`, `sum`) VALUES
+(874409, 'thinh', 'Ninh Kieu', 2342524, '2021-05-15', 'Trực tiếp', 0, '32035000');
 
 -- --------------------------------------------------------
 
@@ -52,6 +60,14 @@ CREATE TABLE `billinfo` (
   `avatar` varchar(255) COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `price` decimal(15,0) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `billinfo`
+--
+
+INSERT INTO `billinfo` (`id`, `idbill`, `pro_name`, `cate_id`, `soluong`, `avatar`, `price`) VALUES
+(19, 874409, 'Asus nè', 1, 1, 'as3.jpg', '35000'),
+(20, 874409, 'Iphone 12 pro max', 2, 1, 'ip3.jpg', '32000000');
 
 -- --------------------------------------------------------
 
@@ -227,13 +243,13 @@ ALTER TABLE `useraddress`
 -- AUTO_INCREMENT cho bảng `billinfo`
 --
 ALTER TABLE `billinfo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT cho bảng `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT cho bảng `category`
