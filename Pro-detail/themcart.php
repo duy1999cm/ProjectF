@@ -10,7 +10,7 @@
     }
 
     if($user_id==''){
-        echo 'Vui lòng đăng nhập để sản phẩm này';
+        echo 'Vui lòng đăng nhập để mua sản phẩm này';
     }else{
         $sql = "select * from `cart` where pro_id='$id'";
         $reusult=$con->query($sql);
