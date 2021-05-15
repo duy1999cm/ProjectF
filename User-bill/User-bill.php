@@ -73,7 +73,7 @@
                             foreach($result as $items){
                                 echo'
                                 <tr>
-                                <td><a href="../Pro-bill/Pro-bill.php">'.$items['id'].'</a></td>
+                                <td><a href="../Pro-bill/Pro-bill.php?id='.$items['id'].'">'.$items['id'].'</a></td>
                                 <td>'.$items['date'].'</td>
                                 ';
                                 if($items['status']==0){

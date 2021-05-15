@@ -71,7 +71,7 @@ require_once '../config/check_ss.php';
                             foreach($result as $items){
                                 echo'
                                 <tr>
-                                <td><a href="../Pro-bill/Pro-bill.php">'.$items['id'].'</a></td>
+                                <td><a href="../Pro-bill/Pro-bill.php?id='.$items['id'].'">'.$items['id'].'</a></td>
                                 <td>'.$items['username'].'</td>
                                 <td>'.$items['date'].'</td>
                                 ';
