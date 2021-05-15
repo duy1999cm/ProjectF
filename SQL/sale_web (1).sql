@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th5 14, 2021 lúc 11:17 AM
+-- Thời gian đã tạo: Th5 15, 2021 lúc 03:42 PM
 -- Phiên bản máy phục vụ: 10.4.18-MariaDB
 -- Phiên bản PHP: 8.0.3
 
@@ -29,8 +29,11 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `bill` (
   `id` int(11) NOT NULL,
+  `username` varchar(255) COLLATE utf8mb4_vietnamese_ci NOT NULL,
+  `address` varchar(255) COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `date` varchar(255) COLLATE utf8mb4_vietnamese_ci NOT NULL,
-  `status` int(11) NOT NULL,
+  `payment` varchar(255) COLLATE utf8mb4_vietnamese_ci NOT NULL,
+  `status` int(11) NOT NULL DEFAULT 0,
   `sum` decimal(15,0) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
@@ -42,6 +45,7 @@ CREATE TABLE `bill` (
 
 CREATE TABLE `billinfo` (
   `id` int(11) NOT NULL,
+  `idbill` int(11) NOT NULL,
   `pro_name` varchar(255) COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `cate_id` int(11) NOT NULL,
   `soluong` int(11) NOT NULL,
@@ -66,13 +70,6 @@ CREATE TABLE `cart` (
   `status` int(11) NOT NULL,
   `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
-
---
--- Đang đổ dữ liệu cho bảng `cart`
---
-
-INSERT INTO `cart` (`id`, `ten_sp`, `pro_id`, `cate_id`, `soluong`, `avatar`, `price`, `status`, `user_id`) VALUES
-(28, 'Apple nè', 3, 1, 1, 'as2.jpg', '200000', 0, 3);
 
 -- --------------------------------------------------------
 
@@ -158,8 +155,7 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`user_id`, `name`, `username`, `password`, `email`, `role`, `address`, `gender`, `phone`, `birthday`) VALUES
 (2, 'Le duy', 'duy', '202cb962ac59075b964b07152d234b70', 'duy1999cm@gmail.com', 1, 'nhinh kieu can tho', 'Male', 9214814, '2021-04-13'),
-(3, 'Cho thinhz', 'thinh', '202cb962ac59075b964b07152d234b70', 'thinhdb@gmail.comz', 0, 'Ninh kiều', 'Female', 2342524, '2021-05-18'),
-(9, 'Le Khanh Duy', 'LeDuy', '202cb962ac59075b964b07152d234b70', 'duy1999cm@gmail.com', 0, 'Ninh Kieu Can tho', 'Male', 654645478, '2021-05-06');
+(3, 'Cho thinhz', 'thinh', '202cb962ac59075b964b07152d234b70', 'thinhdb@gmail.comz', 0, 'Ninh Kieu', 'Female', 2342524, '2021-05-18');
 
 -- --------------------------------------------------------
 
@@ -187,7 +183,8 @@ ALTER TABLE `bill`
 -- Chỉ mục cho bảng `billinfo`
 --
 ALTER TABLE `billinfo`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `idbill` (`idbill`);
 
 --
 -- Chỉ mục cho bảng `cart`
@@ -227,22 +224,16 @@ ALTER TABLE `useraddress`
 --
 
 --
--- AUTO_INCREMENT cho bảng `bill`
---
-ALTER TABLE `bill`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT cho bảng `billinfo`
 --
 ALTER TABLE `billinfo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT cho bảng `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT cho bảng `category`
@@ -271,6 +262,12 @@ ALTER TABLE `useraddress`
 --
 -- Các ràng buộc cho các bảng đã đổ
 --
+
+--
+-- Các ràng buộc cho bảng `billinfo`
+--
+ALTER TABLE `billinfo`
+  ADD CONSTRAINT `billinfo_ibfk_1` FOREIGN KEY (`idbill`) REFERENCES `bill` (`id`);
 
 --
 -- Các ràng buộc cho bảng `cart`
