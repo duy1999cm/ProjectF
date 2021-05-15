@@ -1,5 +1,4 @@
 <?php
-    require_once '../config/check_ss.php';
 
 /*
 THIS FILE USES PHPMAILER INSTEAD OF THE PHP MAIL() FUNCTION
@@ -60,10 +59,10 @@ try {
         $mail->addAddress(''.$_POST['email'].'');
 
     $mail->send();
-    echo "<script>
-            alert('Cảm ơn phản hồi từ bạn!')
-            window.location.replace('contact.php')
-        </script>";
+    echo '<script>
+            alert("Cảm ơn phản hồi từ bạn!")
+            window.location.replace("contact.php")
+        </script>';
 
 } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";

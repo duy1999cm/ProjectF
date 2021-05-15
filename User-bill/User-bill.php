@@ -1,6 +1,8 @@
 <?php
     require_once '../config/dbhelper.php';
     require_once '../config/check_ss.php';
+    $id=$_SESSION['user_id'];
+    $us = $_SESSION['name']
 ?>
 <!DOCTYPE html>
 <html>
@@ -17,8 +19,8 @@
     <div class="all">
         <div class="title-box">
             <h1>Supreme</h1>
-            <a href="#">Log out</a>
-            <a href="#">Account</a>
+            <a href="../Login-Register/Logout.php">Log out</a>
+            <a href="#"><?php echo $us;?></a>
         </div>
         <div class="big-box">
             <div class="btn-box">
@@ -64,15 +66,32 @@
                             <th>Ngày mua</th>
                             <th>Trạng thái</th>
                             <th>Tổng tiền</th>
-                            <th>Action</th>
                         </tr>
-                        <tr>
-                            <td><a href="../Pro-bill/Pro-bill.html">0934294</a></td>
-                            <td>20/4/1029</td>
-                            <td>Hoàn thành</td>
-                            <td>9032903$</td>
-                            <td> <button>xoa</button></td>
-                        </tr>
+                        <?php
+                            $sql="SELECT * FROM `bill` WHERE username='$us'";
+                            $result=executeResult($sql);
+                            foreach($result as $items){
+                                echo'
+                                <tr>
+                                <td><a href="../Pro-bill/Pro-bill.php?id='.$items['id'].'">'.$items['id'].'</a></td>
+                                <td>'.$items['date'].'</td>
+                                ';
+                                if($items['status']==0){
+                                echo'
+                                <td>Đang xử lý</td>
+                                ';
+                                }
+                                else if($items['status']==1){
+                                    echo'
+                                    <td>Hoàn thành</td>
+                                    ';
+                                }
+                                echo'
+                                <td>'.number_format($items['sum'],0,'.',',').'</td>
+                                </tr>
+                                ';
+                            }
+                        ?>
                     </table>
                 </div>
                 <div class="img1">

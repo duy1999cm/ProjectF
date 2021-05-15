@@ -59,17 +59,38 @@ require_once '../config/check_ss.php';
                     <form action="" method="POST">
                         <table class="table">
                             <tr>
-                                <th>idHoadon</th>
-                                <th>Ten</th>
-                                <th>Ngay</th>
-                                <th>Tongtien</th>
+                                <th>Id</th>
+                                <th>Username</th>
+                                <th>Ngày mua</th>                                
+                                <th>Trạng thái</th>
+                                <th>Tổng tiền</th>
                             </tr>
-                            <tr>
-                                <td><a href="#">1</a></td>
-                                <td>meo</td>
-                                <td>meoemo</td>
-                                <td>1391234</td>
-                            </tr>
+                            <?php
+                            $sql="SELECT * FROM `bill`";
+                            $result=executeResult($sql);
+                            foreach($result as $items){
+                                echo'
+                                <tr>
+                                <td><a href="../Pro-bill/Pro-bill.php?id='.$items['id'].'">'.$items['id'].'</a></td>
+                                <td>'.$items['username'].'</td>
+                                <td>'.$items['date'].'</td>
+                                ';
+                                if($items['status']==0){
+                                echo'
+                                <td>Đang xử lý</td>
+                                ';
+                                }
+                                else if($items['status']==1){
+                                    echo'
+                                    <td>Hoàn thành</td>
+                                    ';
+                                }
+                                echo'
+                                <td>'.number_format($items['sum'],0,'.',',').'</td>
+                                </tr>
+                                ';
+                            }
+                        ?>
                         </table>
                     </form>
                 </div>
