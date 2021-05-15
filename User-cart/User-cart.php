@@ -90,38 +90,38 @@
                     </table>
                     </form>
                 </div>
+                <form action="" method="POST">
                 <div class="payment">
                 <?php
                     $sql1="SELECT SUM(price)as sum FROM `cart` WHERE user_id='$id'";
-                    $reusult1 = executeResult($sql1);
-                    foreach($reusult1 as $item){
+                    $reusult1 = executeSingle($sql1);
                         echo'
-                        <h2>Thành tiền: '.number_format($item['sum'],0,'.','.').'₫</h2>
+                        <h2>Thành tiền:'.number_format($reusult1['sum'],0,'.',',').'₫</h2>
+                        <input type="number" id="sum" value="'.$reusult1['sum'].'"></input>
                         ';
-                    }
                 ?>
-                    <button type="button" onclick="con()"><h2>Thanh toán</h2></button>
+                    <button type="button" onclick="addbill()"><h2>Thanh toán</h2></button>
                 </div>
                 <div>
                     <div class="opt">
-                        <form action="" method="GET">
+                        
                             <label>Địa chỉ:</label>
-                            <select name="type" class="select">
+                            <select name="address" id="address">
                             <?php
                     $sql2="SELECT * FROM `user` WHERE user_id='$id'";
                     $reusult2 = executeSingle($sql2);
                         echo'
-                        <option value="0">'.$reusult2['address'].'</option>
+                        <option value="'.$reusult2['address'].'">'.$reusult2['address'].'</option>
                         ';
                 ?>
                                
                             </select>
                             <br>
                             <label>Phương thức thanh toán:</label>
-                            <select name="type">
-                            <option value="tructiep">Trực tiếp</option>
-                            <option value="atm">ATM</option>
-                            <option value="vidientu">Ví điện tử</option>
+                            <select name="payment" id="payment">
+                            <option value="Trực tiếp">Trực tiếp</option>
+                            <option value="ATM">ATM</option>
+                            <option value="Ví điện tử">Ví điện tử</option>
                         </select>
                         </form>
                     </div>

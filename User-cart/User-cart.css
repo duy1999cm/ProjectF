@@ -213,7 +213,7 @@
     position: absolute;
     overflow: hidden;
     overflow-y: scroll;
-	display: none;
+    display: none;
 }
 
 .atm2 table {
@@ -223,4 +223,8 @@
 
 .atm2 td {
     border: 2px solid #FF00FF;
+}
+
+#sum {
+    display: none;
 }
