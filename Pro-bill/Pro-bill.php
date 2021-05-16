@@ -1,6 +1,8 @@
-<?
+<?php
+    require_once '../config/dbhelper.php';
     require_once '../config/check_ss.php';
-
+    $id=$_GET['id'];
+    $role=$_SESSION['role'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -49,12 +51,16 @@
         <div class="container">
             <div class="row mt-3">
                 <div class="col-md-4 item ">
+                <?php
+                    $sql="SELECT * FROM `bill` WHERE id='$id'";
+                    $result=executeSingle($sql);
+                    echo'
                     <h5 class="text-center my-3">Địa chỉ người nhận</h5>
                     <div class="address info p-4">
-                        <h6>VÕ NGUYÊN THỊNH</h6>
+                        <h6>'.$result['name'].'</h6>
                         <span>
-                            Địa chỉ: Số 28, hẻm 132, đường 3/2, Phường Hưng Lợi, Quận Ninh Kiều, Cần Thơ, Việt Nam
-                            Điện thoại: 0974971043
+                            Địa chỉ: '.$result['address'].'<br>
+                            Điện thoại: '.$result['phone'].'
                         </span>
                     </div>
                 </div>
@@ -62,8 +68,7 @@
                     <h5 class="text-center my-3">Ngày đặt hàng</h5>
                     <div class="create_at info p-4">
                         <span>
-                            Giao vào Thứ tư, 14/10
-                            Miễn phí vận chuyển
+                                '.$result['date'].'
                         </span>
                     </div>
                 </div>
@@ -71,9 +76,12 @@
                     <h5 class="text-center my-3">Hình thức thanh toán</h5>
                     <div class="payment info p-4">
                         <span>
-                            Thanh toán tiền mặt khi nhận hàng
+                            '.$result['payment'].'
                         </span>
                     </div>
+                    ';
+                ?>
+
                 </div>
             </div>
 
@@ -83,31 +91,29 @@
                     <table class="table table-hover">
                         <thead class="thead-light">
                             <tr>
+                                <th scope="col">Hình ảnh</th>
                                 <th scope="col">Sản phẩm</th>
-                                <th scope="col">Giá</th>
                                 <th scope="col">Số Lượng</th>
                                 <th scope="col">Thành tiền</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
+                        <?php
+                            $sql1="SELECT * FROM `billinfo` WHERE idbill='$id'";
+                            $result1=executeResult($sql1);
+                            foreach($result1 as $items){
+                                echo'
+                                <tr>
                                 <td scope="row">
-                                    <img width="100px" src="../img/2.jpg" alt="">
-                                    <span class="ml-3">Bộ Sạc Pin ZMI PB421 Cho Pin AA, AAA</span>
+                                    <img width="100px" src="../Img/proimg/'.$items['avatar'].'" alt="">
                                 </td>
-                                <td>360,000₫</td>
-                                <td>2</td>
-                                <td class="text-danger">720,000₫</td>
+                                <td><span class="ml-3">'.$items['pro_name'].'</span></td>
+                                <td>'.$items['soluong'].'</td>
+                                <td class="text-danger">'.number_format($items['price'],0,'.',',').'₫</td>
                             </tr>
-                            <tr>
-                                <td scope="row">
-                                    <img width="100px" src="../img/2.jpg" alt="">
-                                    <span class="ml-3">Bộ Sạc Pin ZMI PB421 Cho Pin AA, AAA</span>
-                                </td>
-                                <td>360,000₫</td>
-                                <td>2</td>
-                                <td class="text-danger">720,000₫</td>
-                            </tr>
+                                ';
+                            }
+                        ?>
                         </tbody>
                     </table>
                 </div>
@@ -116,19 +122,24 @@
 
             <div class="row ">
                 <div class="col-md-10 text-right pay py-3">
-                    <h6>Giá:</h6>
-                    <h6>Số Lượng:</h6>
                     <h6>Thành tiền:</h6>
                 </div>
                 <div class="col-md-2 text-right pay py-3">
-                    <h6>360,000₫</h6>
-                    <h6>2</h6>
-                    <h6 class="text-danger">720,000₫</h6>
+                <?php
+                    echo'
+                    <h6 class="text-danger">'.number_format($result['sum'],0,'.',',').'₫</h6>
+                    ';
+                ?>
                 </div>
 
             </div>
-
-
+            <?php
+                if($role==1){
+                echo'
+            <div class="check-role"><a href="xuly.php?id='.$id.'">Hoàn tất đơn</a></div>
+                ';
+                }
+            ?>
         </div>
 
         <!-- footer -->

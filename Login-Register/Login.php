@@ -12,6 +12,7 @@ require_once '../config/config.php';
         $_SESSION['user_id']=$row['user_id'];
         $_SESSION['role']=$row['role'];
         $_SESSION['name']=$row['username'];
+        $_SESSION['name1']=$row['name'];
         $_SESSION['phone']=$row['phone'];
         header("location: ../index.php");
     }else{
