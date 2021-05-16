@@ -11,7 +11,7 @@ $sum=$_GET['sum'];
 $today = date("Y-m-d");  
 if($address==""){
     echo'
-        Bạn chưa cập nhật địa chỉ!
+        Bạn chưa cập nhật thông tin!
     ';
 }else{
     $sql="INSERT INTO `bill`(`id`,`name`,`username`, `address`,`phone`,`date`, `payment`, `sum`) VALUES ('$id','$name','$username','$address','$phone','$today','$payment','$sum')";

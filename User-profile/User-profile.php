@@ -69,9 +69,9 @@ if ($result->num_rows>0) {
                         <table class="table">
                         <tr>
                                 <th>
-                                    <label for="Username">User name</label></th>
+                                    <label for="Username">Username</label></th>
                                 <td class="input-name">
-                                    <input type="text" class="input-field" placeholder="User name" name="username" value="'.$row['username'].'">
+                                    <input type="text" class="input-field" placeholder="User name" name="username" value="'.$row['username'].'" readonly>
                                 </td>
                             </tr>
                             <tr>
@@ -140,7 +140,7 @@ if ($result->num_rows>0) {
                                 <td>
                                 </td>
                                 <td class="btn-save">
-                                    <button type="submit" name="sub-btn" class="sub-btn"><p>Save</p></button>
+                                    <button type="submit" name="sub-btn" class="sub-btn" onclick="vali()"><p>Save</p></button>
                                 </td>
                             </tr>
                         </table>
