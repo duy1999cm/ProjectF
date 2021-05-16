@@ -3,8 +3,6 @@ require_once '../config/dbhelper.php';
 $id=random_int(100000,999999);
 $userid=$_SESSION['user_id'];
 $username=$_SESSION['name'];
-$name=$_SESSION['name1'];
-$phone=$_SESSION['phone'];
 $address=$_GET['address'];
 $payment=$_GET['payment'];
 $sum=$_GET['sum'];
@@ -14,6 +12,10 @@ if($address==""){
         Bạn chưa cập nhật thông tin!
     ';
 }else{
+    $sql4="SELECT * FROM `user` WHERE user_id='$userid'";
+    $reusult1=executeSingle($sql4);
+    $name=$reusult1['name'];
+    $phone=$reusult1['phone'];
     $sql="INSERT INTO `bill`(`id`,`name`,`username`, `address`,`phone`,`date`, `payment`, `sum`) VALUES ('$id','$name','$username','$address','$phone','$today','$payment','$sum')";
     execute($sql);
     $sql1 = "SELECT * FROM cart where user_id='$userid'";
