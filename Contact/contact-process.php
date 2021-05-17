@@ -25,8 +25,10 @@ try {
     $mail->SMTPAuth = true; // turn on SMTP authentication
     $mail->SMTPSecure = 'tls';
 
-    $mail->Username = 'tiknum01@gmail.com'; // YOUR gmail email
-    $mail->Password = 'xzwt2N9x'; // YOUR gmail password
+    // $mail->Username = 'tiknum01@gmail.com'; // YOUR gmail email
+    // $mail->Password = 'xzwt2N9x'; // YOUR gmail password
+    $mail->Username = 'projectf526@gmail.com'; // YOUR gmail email
+    $mail->Password = '01237672748vV'; // YOUR gmail password
 
     //Email subject
 	    $mail->Subject = "Test email using PHPMailer";
