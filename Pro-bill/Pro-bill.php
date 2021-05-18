@@ -107,12 +107,26 @@
                                 <td scope="row">
                                     <img width="100px" src="../Img/proimg/'.$items['avatar'].'" alt="">
                                 </td>
-                                <td><span class="ml-3">'.$items['pro_name'].'</span></td>
-                                <td>'.$items['soluong'].'</td>
-                                <td class="text-danger">'.number_format($items['price'],0,'.',',').'₫</td>
-                            </tr>
+                                <td><span class="ml-3 d-block mt-4">'.$items['pro_name'].'</span></td>
+                                <td><span class="ml-3 d-block mt-4">'.$items['soluong'].'</span></td>
+                                <td class="text-danger"><span class="ml-3 d-block mt-4">'.number_format($items['price'],0,'.',',').'₫</span></td>';
+                               echo' 
+                                </tr>
                                 ';
                             }
+                            echo'
+                            <tr>
+                                <td class=" p-3 text-right" colspan="4">';
+                                if($role==1){
+                                    echo '
+                                    <a href="xuly.php?id='.$id.'">
+                                         <button type="button" class="w-100 btn btn-success">HOÀN THÀNH ĐƠN</button>
+                                    </a>
+                                    ';
+                                }
+                                echo'</td>
+                            </tr>
+                            ';
                         ?>
                         </tbody>
                     </table>
@@ -133,13 +147,6 @@
                 </div>
 
             </div>
-            <?php
-                if($role==1){
-                echo'
-            <div class="check-role"><a href="xuly.php?id='.$id.'">Hoàn tất đơn</a></div>
-                ';
-                }
-            ?>
         </div>
 
         <!-- footer -->

@@ -96,16 +96,16 @@
 
                         <div class="carousel-inner">
                             <div class="carousel-item active">
+                                <img src="../Img/banner.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
                                 <img src="../Img/banner1.jpg" class="d-block w-100" alt="...">
                             </div>
                             <div class="carousel-item">
-                                <img src="../Img/mivietnam-slide-s6maxv-04.jpg" class="d-block w-100" alt="...">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="../Img/Banner-3C.jpg" class="d-block w-100" alt="...">
-                            </div>
-                            <div class="carousel-item">
                                 <img src="../Img/banner2.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="../Img/banner3.jpg" class="d-block w-100" alt="...">
                             </div>
                         </div>
                         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
