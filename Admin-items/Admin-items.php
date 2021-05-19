@@ -90,7 +90,7 @@ $username=$_SESSION['name'];
         <div class="big-box" id="big-box">
             <div class="btn-box">
                 <table>
-                    <tr>
+                <tr>
                         <td><a href="../index.php"><button type="button" class="btn"><i class="fas fa-home"></i>
                         <p>Trang chủ</p>
                     </button></a></td>
@@ -107,10 +107,10 @@ $username=$_SESSION['name'];
                             </button></a></td>
                     </tr>
                     <tr>
-                    <td><a href="../Admin-items/Admin-items.php"><button type="button" class="btn"><i class="fas fa-sitemap"></i>
-                    <p>Category</p>
-                    </button></a></td>
-                </tr>
+                        <td><a href="../Admin-cate/Admin-cate.php"><button type="button" class="btn"><i class="fas fa-sitemap"></i>
+                        <p>Category</p>
+                        </button></a></td>
+                    </tr>
                 </table>
             </div>
             <div class="data-box">

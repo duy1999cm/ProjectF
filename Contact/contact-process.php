@@ -5,9 +5,9 @@ THIS FILE USES PHPMAILER INSTEAD OF THE PHP MAIL() FUNCTION
 AND ALSO SMTP TO SEND THE EMAILS
 */
 
-require 'PHPMailer-master/src/Exception.php';
-require 'PHPMailer-master/src/PHPMailer.php';
-require 'PHPMailer-master/src/SMTP.php';
+require_once 'PHPMailer-master/src/Exception.php';
+require_once 'PHPMailer-master/src/PHPMailer.php';
+require_once 'PHPMailer-master/src/SMTP.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
@@ -25,10 +25,8 @@ try {
     $mail->SMTPAuth = true; // turn on SMTP authentication
     $mail->SMTPSecure = 'tls';
 
-    // $mail->Username = 'tiknum01@gmail.com'; // YOUR gmail email
-    // $mail->Password = 'xzwt2N9x'; // YOUR gmail password
-    $mail->Username = 'projectf526@gmail.com'; // YOUR gmail email
-    $mail->Password = '01237672748vV'; // YOUR gmail password
+    $mail->Username = 'tiknum01@gmail.com'; // YOUR gmail email
+    $mail->Password = 'xzwt2N9x'; // YOUR gmail password
 
     //Email subject
 	    $mail->Subject = "Test email using PHPMailer";
@@ -56,7 +54,8 @@ try {
           <td>94</td>
         </tr>
       </table>';
-        $mail->Body = $stringhtml;
+        // $mail->Body = $stringhtml;
+        $mail->Body = "Cam on";
     //Add recipient
         $mail->addAddress(''.$_POST['email'].'');
 

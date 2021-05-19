@@ -76,11 +76,11 @@
                             <?php
                                 foreach($cate as $items){
                                     echo '
-                                    <li><a href="./All-pro/all_pro.php?idcate='.$items['cate_id'].'" style="text-decoration: none; color: white" href="?id='.$items['cate_id'].'">'.$items['cate_name'].'</a></li>
+                                    <li><a href="./All-pro/all_pro.php?idcate='.$items['cate_id'].'" style="text-decoration: none; color: white; display:block;" href="?id='.$items['cate_id'].'">'.$items['cate_name'].'</a></li>
                                     ';
                                 }
                             ?>
-                            <li><a style="text-decoration: none; color: white" href="Contact/contact.php">Liên hệ</a></li>
+                            <li><a style="text-decoration: none; color: white; display:block;" href="Contact/contact.php">Liên hệ</a></li>
                         </ul>
                     </div>
                 </div>

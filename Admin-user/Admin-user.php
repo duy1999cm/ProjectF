@@ -28,27 +28,27 @@ if ($result->num_rows>0) {
         <div class="big-box" id="big-box">
             <div class="btn-box">
                 <table>
-                    <tr>
-                        <td><a href="../index.php"><button type="button" class="btn"><i class="fas fa-home"></i>
-                        <p>Trang chủ</p>
+                <tr>
+                <td><a href="../index.php"><button type="button" class="btn"><i class="fas fa-home"></i>
+                <p>Trang chủ</p>
+            </button></a></td>
+                <td><a href="../Admin-user/Admin-user.php"><button type="button" class="btn"><i class="fas fa-list"></i>
+                <p>User manager</p>
+                </button></a></td>
+            </tr>
+            <tr>
+                <td><a href="../Admin-items/Admin-items.php"><button type="button" class="btn"><i class="fas fa-sitemap"></i>
+                <p>Update items</p>
+                </button></a></td>
+                <td><a href="../Admin-bill/Admin-bill.php"><button type="button" class="btn"><i class="fas fa-money-bill-alt"></i>
+                    <p>Bill manager</p>
                     </button></a></td>
-                        <td><a href="../Admin-user/Admin-user.php"><button type="button" class="btn"><i class="fas fa-list"></i>
-                        <p>User manager</p>
-                        </button></a></td>
-                    </tr>
-                    <tr>
-                        <td><a href="../Admin-items/Admin-items.php"><button type="button" class="btn"><i class="fas fa-sitemap"></i>
-                        <p>Update items</p>
-                        </button></a></td>
-                        <td><a href="../Admin-bill/Admin-bill.php"><button type="button" class="btn"><i class="fas fa-money-bill-alt"></i>
-                            <p>Bill manager</p>
-                            </button></a></td>
-                    </tr>
-                    <tr>
-                    <td><a href="../Admin-items/Admin-items.php"><button type="button" class="btn"><i class="fas fa-sitemap"></i>
-                    <p>Category</p>
-                    </button></a></td>
-                </tr>
+            </tr>
+            <tr>
+                <td><a href="../Admin-cate/Admin-cate.php"><button type="button" class="btn"><i class="fas fa-sitemap"></i>
+                <p>Category</p>
+                </button></a></td>
+            </tr>
                 </table>
             </div>
             <div class="data-box">
