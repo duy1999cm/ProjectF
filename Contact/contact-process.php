@@ -25,8 +25,10 @@ try {
     $mail->SMTPAuth = true; // turn on SMTP authentication
     $mail->SMTPSecure = 'tls';
 
-    $mail->Username = 'tiknum01@gmail.com'; // YOUR gmail email
-    $mail->Password = 'xzwt2N9x'; // YOUR gmail password
+    // $mail->Username = 'tiknum01@gmail.com'; // YOUR gmail email
+    // $mail->Password = 'xzwt2N9x'; // YOUR gmail password
+    $mail->Username = 'demosaleweb@gmail.com'; // YOUR gmail email
+    $mail->Password = 'demosaleweb.cf'; // YOUR gmail password
 
     //Email subject
 	    $mail->Subject = "Test email using PHPMailer";
@@ -34,28 +36,13 @@ try {
         $mail->setFrom('tiknum01@gmail.com');
     //Enable HTML
         $mail->isHTML(true);
+        // $mail->From = 'tiknum01@gmail.com';
+        // $mail->FromName = 'tiknum01';
     //Attachment
         // $mail->addAttachment('img/work-6.jpg');
     //Email body 
-        $stringhtml='<table style="width:100%">
-        <tr>
-          <th>Firstname</th>
-          <th>Lastname</th>
-          <th>Age</th>
-        </tr>
-        <tr>
-          <td>Jill</td>
-          <td>Smith</td>
-          <td>50</td>
-        </tr>
-        <tr>
-          <td>Eve</td>
-          <td>Jackson</td>
-          <td>94</td>
-        </tr>
-      </table>';
-        // $mail->Body = $stringhtml;
-        $mail->Body = "Cam on";
+        $mail->Subject = 'Here is the subject';
+        $mail->Body = 'Cam on';
     //Add recipient
         $mail->addAddress(''.$_POST['email'].'');
 

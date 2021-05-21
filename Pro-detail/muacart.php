@@ -11,10 +11,11 @@
 
     if($user_id==''){
         echo'
-            <script>alert("Vui lòng đăng nhập để mua sản phẩm này");</script>
+            <script>
+            alert("Vui lòng đăng nhập để mua sản phẩm này");
+            window.history.back();
+            </script>
         ';
-        header("Location: " . $_SERVER["HTTP_REFERER"]);
-        // echo 'Vui lòng đăng nhập để mua sản phẩm này';
     }else{
         $sql = "select * from `cart` where pro_id='$id'";
         $reusult=$con->query($sql);
